@@ -61,16 +61,12 @@ fi
 function blob_fixup() {
     case "${1}" in
 
-    vendor/lib64/hw/keystore.msm8998.so)
-        sed -i "s|keystore.msm8937.so|keystore.msm8998.so|g" "${2}"
-        ;;
-
-    vendor/lib64/hw/gatekeeper.msm8998.so)
-        sed -i "s|gatekeeper.msm8937.so|gatekeeper.msm8998.so|g" "${2}"
-        ;;
-
     system_ext/etc/permissions/audiosphere.xml)
         sed -i 's|/system/framework/audiosphere.jar|/system_ext/framework/audiosphere.jar|g' "${2}"
+        ;;
+
+    vendor/etc/izat.conf)
+        sed -i "216s/PROCESS_STATE=ENABLED/PROCESS_STATE=DISABLED/g" "${2}"
         ;;
 
     vendor/lib/hw/camera.msm8998.so)
@@ -124,6 +120,14 @@ function blob_fixup() {
     vendor/lib/libsac.so)
         "${PATCHELF}" --remove-needed "libcamera_client.so" "${2}"
         "${PATCHELF}" --remove-needed "libgui.so" "${2}"
+        ;;
+
+    vendor/lib64/hw/gatekeeper.msm8998.so)
+        sed -i "s|gatekeeper.msm8937.so|gatekeeper.msm8998.so|g" "${2}"
+        ;;
+
+    vendor/lib64/hw/keystore.msm8998.so)
+        sed -i "s|keystore.msm8937.so|keystore.msm8998.so|g" "${2}"
         ;;
 
     vendor/lib64/libril-qc-hal-qmi.so)
