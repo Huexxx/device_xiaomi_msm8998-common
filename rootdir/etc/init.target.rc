@@ -138,13 +138,6 @@ on init
     # Freezer setup
     write /dev/freezer/frozen/freezer.killable 1
 
-    # Create camera daemon cpusets
-    mkdir /dev/cpuset/camera-daemon 0750 cameraserver cameraserver
-    write /dev/cpuset/camera-daemon/cpus 0
-    write /dev/cpuset/camera-daemon/mems 0
-    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
-    chmod 0660 /dev/cpuset/camera-daemon/tasks
-
     # ZRAM setup
     #write /sys/block/zram0/comp_algorithm lz4
     #write /sys/block/zram0/disksize 1073741824
@@ -200,7 +193,6 @@ on property:sys.boot_completed=1
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/restricted/cpus 0-3
-    write /dev/cpuset/camera-daemon/cpus 0-7
 
     # Setup runtime blkio
     # value for group_idle is us
