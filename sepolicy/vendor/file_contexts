@@ -25,6 +25,9 @@
 # Mutualex service
 /(vendor|system/vendor)/bin/mutualex                          u:object_r:mutualex_exec:s0
 
+# Power
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr u:object_r:hal_power_default_exec:s0
+
 # Ril
 /(vendor|system/vendor)/bin/hw/android\.hardware\.radio\.config@1\.1-service\.wrapper\.xiaomi_msm8998 u:object_r:hal_radio_config_default_exec:s0
 
