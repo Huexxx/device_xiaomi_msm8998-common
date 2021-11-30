@@ -948,7 +948,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         </map>
     </carrier_config>
 
-    <carrier_config mcc="460" mnc="11">
+<!--    <carrier_config mcc="460" mnc="11">
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
@@ -982,7 +982,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="config_enable_video_crbt" value="true" />
         <boolean name="config_disable_clir_over_ut" value="true" />
         <boolean name="disable_filter_out_conference_host" value="true" />
-    </carrier_config>
+    </carrier_config> -->
 
     <carrier_config mcc="460" mnc="12">
         <boolean name="carrier_volte_available_bool" value="true" />
