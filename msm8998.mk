@@ -168,7 +168,7 @@ PRODUCT_PACKAGES += \
     libmedia_omx.vendor_32 \
     libmemunreachable.vendor_32 \
     libshmemcompat.vendor_32 \
-    mediametricsservice-aidl-cpp.vendor_32
+    mediametricsservice-aidl-cpp.vendor
 
 # Component overrides
 PRODUCT_COPY_FILES += \
@@ -418,7 +418,8 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
+    android.hardware.sensors@1.0-service \
+    android.hardware.sensors@1.0.vendor
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
@@ -451,7 +452,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.frameworks.bufferhub@1.0.vendor_32 \
     libdng_sdk.vendor_32 \
-    libstdc++.vendor_32 \
+    libstdc++.vendor \
     vndk-ext
 
 # Wifi

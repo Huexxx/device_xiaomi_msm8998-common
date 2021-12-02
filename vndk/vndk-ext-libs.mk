@@ -50,4 +50,5 @@ EXTRA_VENDOR_LIBRARIES_64 := \
     libaudiopolicy \
     libmediametrics \
     libmediautils \
-    libnblog
+    libnblog \
+    libprocessgroup
