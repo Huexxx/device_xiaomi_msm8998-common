@@ -46,6 +46,9 @@ media.settings.xml                                            u:object_r:media_s
 # Mwqem
 persist.vendor.mwqem.                                         u:object_r:vendor_mwqem_prop:s0
 
+# Power
+vendor.powerhal.                                              u:object_r:vendor_power_prop:s0
+
 # Radio
 persist.sys.labtest_flag                                      u:object_r:telephony_status_prop:s0
 ro.build.software.version                                     u:object_r:vendor_qcom_ims_prop:s0
