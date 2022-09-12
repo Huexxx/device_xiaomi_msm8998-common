@@ -13,6 +13,6 @@ set_prop(vendor_init, vendor_dataqdp_prop)
 set_prop(vendor_init, vendor_default_prop)
 set_prop(vendor_init, vendor_mwqem_prop)
 set_prop(vendor_init, vendor_persist_dpm_prop)
+set_prop(vendor_init, vendor_power_prop)
 set_prop(vendor_init, vendor_qcom_ims_prop)
 set_prop(vendor_init, vendor_reschedule_service_prop)
-
