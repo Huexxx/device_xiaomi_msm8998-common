@@ -51,7 +51,7 @@ vendor/lib/soundfx/libqcvirt.so|d20b5c430416064c787e55d9708962ef615462a1
 # Audio libraries - from mata-user-10-QQ1A.200105.032-540-release-keys
 vendor/lib/soundfx/libshoebox.so|322653e95a5ef43790b0dc08e18b235b6683323d
 
-# Audio libraries - from cheetah-user 13 TQ3A.230605.012 10204971 release-keys
+# Audio libraries - from google/cheetah/cheetah:13/TQ3A.230805.001/10316531:user/release-keys
 vendor/lib/soundfx/libspatialaudio.so|b26727b8887dad56f5e183f7145487c88bd2f065
 
 # Bluetooth - from sld_sprout RKQ1.210607.001-00WW_3_490
