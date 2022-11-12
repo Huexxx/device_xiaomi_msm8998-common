@@ -75,4 +75,8 @@
     <!-- Wifi driver Automatic channel selection (ACS) for softap to include DFS channels -->
     <bool translatable="false" name="config_wifiSoftapAcsIncludeDfs">true</bool>
 
+
+    <!-- Indicate the driver support NL80211_REG_CHANGED event. -->
+    <bool translatable="false" name="config_wifiDriverSupportedNl80211RegChangedEvent">true</bool>
+
 </resources>
