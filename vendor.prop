@@ -78,6 +78,9 @@ persist.vendor.camera.HAL3.enabled=1
 persist.vendor.camera.set.afd=4
 vendor.camera.hal1.packagelist=com.android.camera
 
+# Charger
+ro.charger.enable_suspend=true
+
 # CNE
 persist.vendor.cne.feature=1
 
