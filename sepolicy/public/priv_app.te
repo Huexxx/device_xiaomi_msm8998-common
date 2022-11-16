@@ -1,0 +1,1 @@
+allow priv_app proc_max_map_count:file r_file_perms;
