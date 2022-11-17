@@ -530,10 +530,13 @@ vendor/bin/msm_irqbalance|117d7c8a8f6f12b3615ec8ab676231df93d277f1
 # Keystore - from LA.UM.9.6.2.r1-04100-89xx.0
 vendor/lib64/hw/keystore.msm8937.so:vendor/lib64/hw/keystore.msm8998.so|4e4fea432ecafa65cda2d364b7b4e23e3f84ca08
 
-# Listen - from LA.UM.9.6.2.r1-03600-89xx.0
-vendor/lib/hw/sound_trigger.primary.msm8937.so:vendor/lib/hw/sound_trigger.primary.msm8998.so|fb5605556024921c2f5bad844d7ae4a3a0822af7
-vendor/lib/libadpcmdec.so|7a38d6b28b27cf663681ad077614a03164418f91
-vendor/lib/libsmwrapper.so|f0ee761c02c888e77d947bb87d162d9379bc1530
+# Listen - from OnePlus/OnePlus5/OnePlus5:10/QKQ1.191014.012/2010292059
+lib/liblistenjni.so:vendor/lib/liblistenjni.so
+lib/liblistensoundmodel2.so:vendor/lib/liblistensoundmodel2.so
+vendor/lib/hw/sound_trigger.primary.msm8998.so
+vendor/lib/libadpcmdec.so
+vendor/lib/libmulawdec.so
+vendor/lib/libsmwrapper.so
 
 # Media
 -vendor/lib/libgpustats.so|138dce3b7ac0c5c080acb122f2dfd1a70037d9aa
