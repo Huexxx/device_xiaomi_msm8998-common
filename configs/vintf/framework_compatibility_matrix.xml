@@ -127,14 +127,6 @@
             <instance>SIM2</instance>
         </interface>
     </hal>
-    <hal format="hidl">
-        <name>android.hardware.soundtrigger</name>
-        <version>2.2</version>
-        <interface>
-            <name>ISoundTriggerHw</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="aidl">
         <name>android.hardware.wifi.hostapd</name>
         <version>1</version>
