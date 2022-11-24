@@ -27,6 +27,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# Disable thermal and BCL hotplug
+echo 0 > /sys/module/msm_thermal/core_control/enabled
+
 # Enable bus-dcvs
 for cpubw in /sys/class/devfreq/*qcom,cpubw*
 do
@@ -51,7 +54,7 @@ echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 echo 3000 > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
 echo 10 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
 
-# disable thermal and BCL hotplug
-echo 0 > /sys/module/msm_thermal/core_control/enabled
+# Enable thermal and BCL hotplug
+echo 1 > /sys/module/msm_thermal/core_control/enabled
 
 setprop vendor.post_boot.parsed 1
