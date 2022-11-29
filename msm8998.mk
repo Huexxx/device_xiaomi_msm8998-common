@@ -204,7 +204,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne \
-    libcnefeatureconfig \
     services-ext
 
 # Display
