@@ -181,7 +181,7 @@ LocationAPI::createInstance (LocationCallbacks& locationCallbacks)
         return NULL;
     }
 
-    void *handle = nullptr;
+    /*void *handle = nullptr;
     getLocationClientApiImpl getter = (getLocationClientApiImpl)dlGetSymFromLib(handle,
             "liblocation_client_api.impl.so", "getLocationClientApiImpl");
     if (nullptr == getter) {
@@ -190,7 +190,7 @@ LocationAPI::createInstance (LocationCallbacks& locationCallbacks)
         newLocationAPIIntf = getter(locationCallbacks.capabilitiesCb);
         LOC_LOGi("Succesfully loaded LocationClientApi implementation.");
         return newLocationAPIIntf;
-    }
+    }*/
 
     if (newLocationAPI == nullptr) {
         newLocationAPI = new LocationAPI();

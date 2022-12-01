@@ -54,27 +54,27 @@ typedef const void* (*gnssPowerHandler)(void);
 
 int initializeGnssAutoPowerHandler() {
 
-    void * handle = nullptr;
+    /*void * handle = nullptr;
     gnssPowerHandler getter = (gnssPowerHandler) dlGetSymFromLib(handle, GNSS_AUTO_POWER_LIBNAME,
                                                                  "initGnssAutoPowerHandler");
     if (nullptr != getter) {
         getter();
         ALOGI("GnssAutoPowerHandler Initialized!");
         return 0;
-    }
+    }*/
     return -1;
 }
 
 int initializeGnssWearPowerHandler() {
 
-    void * handle = nullptr;
+    /*void * handle = nullptr;
     gnssPowerHandler getter = (gnssPowerHandler) dlGetSymFromLib(handle, GNSS_WEAR_POWER_LIBNAME,
                                                                  "initGnssWearPowerHandler");
     if (nullptr != getter) {
         getter();
         ALOGI("GnssWearPowerHandler Initialized!");
         return 0;
-    }
+    }*/
     return -1;
 }
 

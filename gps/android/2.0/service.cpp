@@ -51,21 +51,21 @@ typedef const void* (*gnssAutoPowerHandler)(void);
 
 void initializeGnssPowerHandler() {
 
-    void * handle = nullptr;
+    /*void * handle = nullptr;
     const char* error = nullptr;
     gnssAutoPowerHandler getter = nullptr;
 
     getter = (gnssAutoPowerHandler) dlGetSymFromLib(handle, GNSS_POWER_LIBNAME,
                                                     "initGnssAutoPowerHandler");
 
-    if (nullptr == getter) {
+    if (nullptr == getter) {*/
         /*may not be real problem for non-automotive products*/
         ALOGW("dlGetSymFromLib for getGnssAutoPowerHandler failed - may not be real problem.");
-    } else {
+    //} else {
         /*Initialize GnssAutoPowerHandler if available*/
-        getter();
+        /*getter();
         ALOGI("GnssAutoPowerHandler Initialized!");
-    }
+    }*/
 }
 
 int main() {

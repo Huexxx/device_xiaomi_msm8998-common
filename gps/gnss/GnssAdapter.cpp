@@ -5274,17 +5274,17 @@ void GnssAdapter::initDefaultAgps() {
     LOC_LOGD("%s]: ", __func__);
     void *handle = nullptr;
 
-    LocAgpsGetAgpsCbInfo getAgpsCbInfo =
+    /*LocAgpsGetAgpsCbInfo getAgpsCbInfo =
         (LocAgpsGetAgpsCbInfo)dlGetSymFromLib(handle, "libloc_net_iface.so",
-            "LocNetIfaceAgps_getAgpsCbInfo");
+            "LocNetIfaceAgps_getAgpsCbInfo");*/
     // Below step is to make sure we init nativeAgpsHandler
     // for Android platforms only
     AgpsCbInfo cbInfo = {};
-    if (nullptr != getAgpsCbInfo) {
+    /*if (nullptr != getAgpsCbInfo) {
         cbInfo = getAgpsCbInfo(agpsOpenResultCb, agpsCloseResultCb, this);
-    } else {
+    } else {*/
         cbInfo = mNativeAgpsHandler.getAgpsCbInfo();
-    }
+    //}
 
     if (cbInfo.statusV4Cb == nullptr) {
         LOC_LOGe("statusV4Cb is nullptr!");
