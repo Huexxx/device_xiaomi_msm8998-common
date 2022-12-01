@@ -265,25 +265,26 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-impl-qti:64 \
     android.hardware.gnss@2.1-service-qti \
+    flp.conf \
+    gnss_antenna_info.conf \
     gnss@2.0-base.policy \
     gnss@2.0-xtra-daemon.policy \
     gnss@2.0-xtwifi-client.policy \
     gnss@2.0-xtwifi-inet-agent.policy \
     gps.conf \
-    flp.conf \
-    libbatching \
-    libgeofencing \
-    libgnss \
-    libgps.utils \
-    libloc_core \
-    liblocation_api
+    libbatching:64 \
+    libgeofencing:64 \
+    libgnss:64 \
+    libgps.utils:64 \
+    libloc_core:64 \
+    liblocation_api:64
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
 
 # HIDL
 PRODUCT_PACKAGES += \
