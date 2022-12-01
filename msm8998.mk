@@ -267,6 +267,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti:64 \
     android.hardware.gnss@2.1-service-qti \
+    android.hardware.gnss.measurement_corrections@1.1.vendor:64 \
+    android.hardware.gnss.visibility_control@1.0.vendor:64 \
     flp.conf \
     gnss_antenna_info.conf \
     gnss@2.0-base.policy \
@@ -275,6 +277,7 @@ PRODUCT_PACKAGES += \
     gnss@2.0-xtwifi-inet-agent.policy \
     gps.conf \
     libbatching:64 \
+    libcurl:64 \
     libgeofencing:64 \
     libgnss:64 \
     libgps.utils:64 \
