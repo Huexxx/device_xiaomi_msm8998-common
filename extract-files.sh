@@ -69,6 +69,10 @@ function blob_fixup() {
         sed -i "s|gatekeeper.msm8937.so|gatekeeper.msm8998.so|g" "${2}"
         ;;
 
+    vendor/lib/hw/sound_trigger.primary.msm8998.so)
+        sed -i "s|sound_trigger.primary.msm8937.so|sound_trigger.primary.msm8998.so|g" "${2}"
+        ;;
+
     system_ext/etc/permissions/audiosphere.xml)
         sed -i 's|/system/framework/audiosphere.jar|/system_ext/framework/audiosphere.jar|g' "${2}"
         ;;
