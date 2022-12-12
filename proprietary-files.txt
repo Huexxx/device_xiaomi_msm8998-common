@@ -493,8 +493,10 @@ vendor/lib64/libtinyxml2_1.so|70942325afdd14eedcf11b3fbbfbc3d98f42f8dc
 vendor/lib/hw/vulkan.adreno.so|6df3aa5c6badc46bc7a0367b9a62b0ab5b406159
 vendor/lib64/hw/vulkan.adreno.so|f0cf8bccfcfd0473a2c0322b1274dc4d752f2abb
 
+# Graphics firmware - from daisy V11.0.21.0.QDLMIXM
+vendor/firmware/a530_pfp.fw|c19e1905c15622d7bb02409e6748959bceda9b08
+
 # Graphics firmware
-vendor/firmware/a530_pfp.fw|d027c70fde64241ec13160d09ee1b6c272974a4b
 vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 vendor/firmware/a540_gpmu.fw2|3530f10b4825a3b08c79e0bcfaf6471ec8422f24
 vendor/firmware/a540_zap.b00|85a7fc0008f9a2071d8b3d0cc212b19141633267
