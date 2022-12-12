@@ -59,7 +59,7 @@ system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 # Camera
 vendor/lib/libicuuc-v28.so|ab7cec595165cf89ec47f6dd56084608bf871d39
 vendor/lib/libminikin-v28.so|68332aa4ab1b8957a26d93087a96a4d10f8db688
-vendor/lib/hw/camera.msm8998.so|ba043ec5834c5523217a77756746153bba1fe873
+vendor/lib/hw/camera.msm8998.so|901e58c3429e95174d80205863884fac1b42880d
 vendor/lib/lib_lowlight.so|47cd6107a942c29f2014e2cb244030418b5beb88
 vendor/lib/lib_lowlight_dxo.so|4ed63987a16a3acdb0b12ea0431c9afa36db95cf
 vendor/lib/libarcsoft_beauty_shot.so|42e871495f11d97b7b9a19785e235f7a4d4c1649
