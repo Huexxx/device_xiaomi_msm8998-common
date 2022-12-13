@@ -5,4 +5,4 @@ allow qti_init_shell vfat:dir { read open search };
 allow qti_init_shell vfat:file { getattr read open };
 
 # Ignore harmless denials
-dontaudit qti_init_shell qti_init_shell:capability { dac_override dac_read_search };
+#dontaudit qti_init_shell qti_init_shell:capability { dac_override dac_read_search };
