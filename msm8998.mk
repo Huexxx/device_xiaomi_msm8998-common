@@ -126,8 +126,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio-impl \
-    android.hardware.bluetooth.audio@2.1-impl \
-    libbthost_if
+    android.hardware.bluetooth.audio@2.1-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
@@ -183,12 +182,6 @@ PRODUCT_PACKAGES += \
     libmemunreachable.vendor_32 \
     libshmemcompat.vendor \
     mediametricsservice-aidl-cpp.vendor
-
-# CNE
-PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    services-ext
 
 # Display
 PRODUCT_PACKAGES += \
@@ -276,9 +269,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -467,7 +458,6 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    android.frameworks.bufferhub@1.0.vendor_32 \
     libdng_sdk.vendor_32 \
     libstdc++.vendor \
     vndk-ext
