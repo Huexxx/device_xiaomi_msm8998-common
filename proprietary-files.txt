@@ -543,30 +543,6 @@ vendor/bin/pd-mapper|8eb9717d2ee4da59c64ec89a85bf4e384663322b
 vendor/lib64/libpdmapper.so|dd589e58135e9ef3c952c5d0af9dce2c91df5014
 vendor/lib64/libpdnotifier.so|8e7b07e2b16c3931b93605deb38f2452ff57037b
 
-# Perf
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|2f0eb3f033d16360a3dd7f65a66023fae3663dfe
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
-vendor/etc/perf/commonresourceconfigs.xml|60da152ca923f6101020e5eac43e2e5fc1818c43
-vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
-vendor/etc/perf/perf-profile1.conf|4056b772f2790ffd2f466275be8f03e4a796b55c
-vendor/etc/perf/perf-profile2.conf|341790cfe6d82602ef354b821c5cfdec0dad76e3
-vendor/etc/perf/perf-profile3.conf|eb70ebc87c8a079b0706fa7ac1fb02ff60a7bdc5
-vendor/etc/perf/perf-profile4.conf|530f7ab890fa9ca44e90944deb1a66ef79613c5e
-vendor/etc/perf/perf-profile5.conf|55d67b5afb0cc56e4fe5e9515226be346c9daefc
-vendor/etc/perf/perf-profile6.conf|910a193b8425bbe0080f746d6788e66986b2e762
-vendor/etc/perf/perfboostsconfig.xml|717849d2c15bd5703f7535b1bce1a2a6e98c324a
-vendor/etc/perf/targetconfig.xml|460d39ad0a0e7c54a94ba92647ea2b995fc0fe18
-vendor/etc/perf/targetresourceconfigs.xml|4f674836df32fd51e2bc09f3b56af7ad1a6021a0
-vendor/etc/powerhint.xml|72512bd069cd88ed8d1ad6a23d1b1341d5ab8997
-vendor/lib/libperfgluelayer.so|3850d4ea3dbead227b622fcc47fcec29955fcc63
-vendor/lib/libqti-perfd-client.so|e9d26690a2ca0b1de82011d863188a0c52ffc38f
-vendor/lib/libqti-perfd.so|387b912be9756766bfa22bd93693c498968288ac
-vendor/lib/libqti-util.so|d65f3ef240cebea73bd1ba8b1132a7e639aa05bb
-vendor/lib64/libperfgluelayer.so|aac3486c9873cdb29651a4195f3b3a8abe0838df
-vendor/lib64/libqti-perfd-client.so|3c013c17b1a595d45d69d03141eb1629dc91fbbc
-vendor/lib64/libqti-perfd.so|7bbd09c5f4bc15c3045730f47c30d7904c1232e6
-vendor/lib64/libqti-util.so|50bacf4070874ee15c0e8b483966d361b3e18a51
-
 # Peripheral manager - from LA.UM.9.2.r1-03500-SDMxx0.0
 vendor/bin/pm-proxy|42383b9163716d8e6d81f0516e9cf09f22ea8b06
 vendor/bin/pm-service|b0a5d3491615ef9a237d93a393082105e3c0097c
