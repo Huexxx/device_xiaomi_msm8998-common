@@ -1,1 +1,1 @@
-allow mediaprovider_app rootfs:file { getattr setattr };
+dontaudit mediaprovider_app rootfs:file { getattr setattr };
