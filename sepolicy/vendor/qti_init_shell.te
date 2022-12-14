@@ -1,4 +1,4 @@
-set_prop(qti_init_shell, sensors_panel_prop);
+set_prop(qti_init_shell, sensors_panel_prop)
 
 allow qti_init_shell ctl_stop_prop:property_service { set };
 allow qti_init_shell vfat:dir { read open search };
