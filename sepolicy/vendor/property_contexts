@@ -69,3 +69,6 @@ persist.vendor.mwqem.                                         u:object_r:vendor_
 
 # Media
 media.settings.xml                                            u:object_r:media_settings_xml_prop:s0
+
+# Recovery
+ro.recovery.                                                  u:object_r:recovery_prop:s0
