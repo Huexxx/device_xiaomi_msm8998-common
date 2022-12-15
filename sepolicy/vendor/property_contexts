@@ -66,3 +66,6 @@ ro.hwversion                                                  u:object_r:vendor_
 
 # MWQEM
 persist.vendor.mwqem.                                         u:object_r:vendor_mwqem_prop:s0
+
+# Media
+media.settings.xml                                            u:object_r:media_settings_xml_prop:s0

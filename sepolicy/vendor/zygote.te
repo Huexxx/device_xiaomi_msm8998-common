@@ -3,3 +3,5 @@ allow zygote input_device:chr_file { ioctl open read write };
 
 get_prop(zygote, exported_camera_prop)
 set_prop(zygote, exported_camera_prop)
+
+get_prop(zygote, media_settings_xml_prop)

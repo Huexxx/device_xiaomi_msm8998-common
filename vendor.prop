@@ -111,6 +111,11 @@ persist.vendor.mwqem.enable=1
 # HEH filename encryption is being dropped
 ro.crypto.volume.filenames_mode=aes-256-cts
 
+# Media
+debug.stagefright.omx_default_rank=0
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+vendor.vidc.enc.disable.pq=true
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
