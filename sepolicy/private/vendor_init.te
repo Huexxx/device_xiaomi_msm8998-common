@@ -1,3 +1,4 @@
 set_prop(vendor_init, charger_prop)
+set_prop(vendor_init, device_config_runtime_native_boot_prop)
 set_prop(vendor_init, fingerprint_prop)
 set_prop(vendor_init, persist_debug_prop)
