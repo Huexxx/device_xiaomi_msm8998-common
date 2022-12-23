@@ -86,6 +86,9 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
+# Enable Media Extensions for HAL1 on Legacy Devices
+TARGET_USES_MEDIA_EXTENSIONS := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
