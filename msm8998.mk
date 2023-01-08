@@ -171,17 +171,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0
 
 PRODUCT_PACKAGES += \
-    audioclient-types-aidl-cpp.vendor \
-    audioflinger-aidl-cpp.vendor \
-    audiopolicy-aidl-cpp.vendor \
-    av-types-aidl-cpp.vendor \
-    libandroid_runtime_lazy.vendor_32 \
-    libaudioclient_aidl_conversion.vendor \
-    libaudiofoundation.vendor \
     libmedia_omx.vendor_32 \
     libmemunreachable.vendor_32 \
-    libshmemcompat.vendor \
-    mediametricsservice-aidl-cpp.vendor
+    libshmemcompat.vendor
 
 # Display
 PRODUCT_PACKAGES += \
@@ -466,9 +458,7 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     libdng_sdk.vendor_32 \
-    libstdc++.vendor \
-    vndk-ext \
-    vndservicemanager
+    libstdc++.vendor
 
 # WiFi
 PRODUCT_PACKAGES += \
