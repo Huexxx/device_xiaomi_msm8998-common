@@ -26,9 +26,9 @@
 #
 
 import /system/vendor/etc/init/hw/init.fingerprint.rc
+import /system/vendor/etc/init/hw/init.parts.rc
 import /system/vendor/etc/init/hw/init.qcom.usb.rc
 import /system/vendor/etc/init/hw/init.target.rc
-import /system/vendor/etc/init/init.parts.rc
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
