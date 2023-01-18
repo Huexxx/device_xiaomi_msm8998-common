@@ -45,6 +45,7 @@ persist.dirac.acs.ignore_error=1
 # Disable vsync for cpu rendered apps
 debug.cpurend.vsync=false
 debug.gralloc.enable_fb_ubwc=1
+debug.hwui.skia_atrace_enabled=false
 debug.hwui.use_buffer_age=false
 debug.renderengine.backend=skiaglthreaded
 debug.sf.disable_backpressure=1
