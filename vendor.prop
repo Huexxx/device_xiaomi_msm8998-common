@@ -77,6 +77,7 @@ persist.vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 persist.vendor.camera.HAL3.enabled=1
+persist.vendor.camera.is_type=4
 persist.vendor.camera.set.afd=4
 vendor.camera.hal1.packagelist=com.android.camera
 
