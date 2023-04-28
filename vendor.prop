@@ -161,6 +161,3 @@ ro.vendor.sensors.taptap_gesture=true
 
 # System
 persist.sys.binary_xml=false
-
-# VoLTE
-persist.vendor.qti.telephony.vt_cam_interface=1
