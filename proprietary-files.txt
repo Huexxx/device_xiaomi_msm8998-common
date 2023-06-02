@@ -523,6 +523,8 @@ vendor/lib/libvpplibrary.so|0d4cce9d171692e0f8dec30df2547c808a308283
 vendor/lib/libvqzip.so|c1c4f35456ff34b4baba373f18ed034a7d1e2721
 
 # Misc
+-system_ext/lib/libpenguin.so|19855b83c1098ef7afbadf85eee5fa76f385bb9d
+-system_ext/lib64/libpenguin.so|049a5759fa199c59eaebb3fbb26f7a3c68bcc077
 lib/libFileMux.so|4e05cd5e9913311ad17543d204adcd6d60cc8754
 lib/libOmxMux.so|033f86f26c34c4ec715ee65b1a2cfbef467a1e61
 lib64/libFileMux.so|901bdfe106d04863e3abfa36e1b6a366ccfe4246
