@@ -19,6 +19,19 @@ persist.audio.dirac.speaker=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=11
 
+# Battery life
+pm.sleep_mode=1 
+power.saving.mode=1
+power_supply.wakeup=enable
+ro.config.hw_power_saving=1
+ro.config.nocheckin=1
+ro.mot.eri.losalert.delay=1000
+ro.ril.disable.power.collapse=0
+ro.ril.fast.dormancy.rule=1
+ro.ril.fast.dormancy.timeout=3
+ro.ril.power_collapse=1
+wifi.supplicant_scan_interval=240
+
 # Camera
 camera.shutter_sound.blacklist=com.android.camera
 persist.camera.eis.enable=1
