@@ -100,7 +100,7 @@ void setVendorEnhanced(bool vendorEnhanced) {
     sVendorEnhanced = vendorEnhanced;
 }
 bool isXtraDaemonEnabled() {
-    bool enabled = property_get_bool("persist.sys.xtra-daemon.enabled", false);
+    bool enabled = property_get_bool("persist.sys.xtra-daemon.enabled", true);
     LOC_LOGe("xtra-daemon enabled: %d\n", enabled);
     return enabled;
 }
