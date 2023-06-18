@@ -379,11 +379,11 @@ vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|225dd006bfecf6c1dca
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
 vendor/lib64/libwvhidl.so|f986669454bdf2faee9013cc597fb68f5efff42b
 
-# DRM (TUI) - from LA.UM.9.6.2.r1-04100-89xx.0
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d13bcbbd10f03572c9218
+# DRM (TUI) - from LA.UM.10.2.1.r1-03400-sdm660.0
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|15378114c18fd1b1c8f9671f656396285ad1de48
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11f6563f3
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|3234100973fb8c34b0bb3b3b82db4aa038d1efcf
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|8837d8d38f9448c729a2e7ca196067d7c0e7ecd3
 
 # Gatekeeper - from LA.UM.9.6.2.r1-04100-89xx.0
 vendor/lib64/hw/gatekeeper.msm8937.so:vendor/lib64/hw/gatekeeper.msm8998.so|2063a807fd2ab5eaeea15f602f7b20544d789a1c
