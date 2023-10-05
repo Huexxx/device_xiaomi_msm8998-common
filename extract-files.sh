@@ -85,8 +85,13 @@ function blob_fixup() {
         sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
         ;;
 
+    vendor/lib/lib_lowlight.so|vendor/lib/lib_lowlight_dxo.so|vendor/lib/libSonyIMX386PdafLibrary.so|vendor/lib/libXMFD_AgeGender.so|vendor/lib/libarcsoft_beautyshot.so|vendor/lib/libarcsoft_beautyshot_image_algorithm.so|vendor/lib/libarcsoft_beautyshot_video_algorithm.so|vendor/lib/libarcsoft_dualcam_optical_zoom.so|vendor/lib/libarcsoft_dualcam_optical_zoom_control.so|vendor/lib/libarcsoft_dualcam_refocus.so|vendor/lib/libchromaflash.so|vendor/lib/libmmcamera_hdr_gb_lib.so|vendor/lib/libmorpho_easy_hdr.so|vendor/lib/libmorpho_hdr_checker.so|vendor/lib/liboptizoom.so|vendor/lib/libseemore.so|vendor/lib/libtrueportrait.so|vendor/lib/libubifocus.so|vendor/lib64/libtrueportrait.so)
+        "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+        ;;
+
     vendor/lib/libFaceGrade.so)
         "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+        "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
         ;;
 
     vendor/lib/libMiCameraHal.so)
@@ -101,6 +106,7 @@ function blob_fixup() {
 
     vendor/lib/libarcsoft_beauty_shot.so)
         "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+        "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
         ;;
 
     vendor/lib/libmmcamera_ppeiscore.so)
@@ -118,6 +124,7 @@ function blob_fixup() {
 
     vendor/lib/libmpbase.so)
         "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+        "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
         ;;
 
     vendor/lib/libsac.so)
