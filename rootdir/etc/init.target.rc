@@ -37,10 +37,6 @@ on init
     start vendor.qseecomd
 
     # Boot-time fs tuning
-    write /sys/block/sda/queue/iostats 0
-    write /sys/block/sda/queue/nr_requests 256
-    write /sys/block/sde/queue/iostats 0
-    write /sys/block/sde/queue/nr_requests 256
     setprop sys.io.scheduler "cfq"
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
@@ -195,12 +191,8 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 500
 
     # Post-boot fs tuning
-    write /sys/block/sda/queue/iostats 1
-    write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/read_ahead_kb 128
-    write /sys/block/sde/queue/iostats 1
-    write /sys/block/sde/queue/nr_requests 128
-    write /sys/block/sde/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/iostats 0
+    write /sys/block/sde/queue/iostats 0
     setprop sys.io.scheduler "bfq"
 
     write /dev/cpuset/top-app/cpus 0-7
