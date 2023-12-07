@@ -74,9 +74,7 @@ function blob_fixup() {
         ;;
 
     system_ext/lib64/lib-imsvideocodec.so)
-        for LIBDPM_SHIM in $(grep -L "libshim_imsvt.so" "${2}"); do
-            "${PATCHELF}" --add-needed "libshim_imsvt.so" "$LIBDPM_SHIM"
-        done
+        grep -q "libshim_imsvt.so" "${2}" || "${PATCHELF}" --add-needed "libshim_imsvt.so" "${2}"
         ;;
 
     vendor/lib/hw/camera.msm8998.so)
