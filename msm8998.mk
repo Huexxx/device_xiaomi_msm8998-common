@@ -375,13 +375,6 @@ PRODUCT_COPY_FILES += \
 # Properties
 include $(LOCAL_PATH)/system_prop_o.mk
 
-# Protobuf
-# FIXME: master: compat for libprotobuf
-# See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
-
 # QMI
 $(call inherit-product, external/json-c/Android.configure.mk)
 PRODUCT_PACKAGES += \
