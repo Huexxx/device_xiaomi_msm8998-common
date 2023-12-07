@@ -73,10 +73,6 @@ function blob_fixup() {
         sed -i 's|/system/framework/audiosphere.jar|/system_ext/framework/audiosphere.jar|g' "${2}"
         ;;
 
-    system_ext/lib64/lib-imsvideocodec.so)
-        grep -q "libshim_imsvt.so" "${2}" || "${PATCHELF}" --add-needed "libshim_imsvt.so" "${2}"
-        ;;
-
     vendor/lib/hw/camera.msm8998.so)
         "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
         "${PATCHELF}" --remove-needed "libminikin.so" "${2}"
