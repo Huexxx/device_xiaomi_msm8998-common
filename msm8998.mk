@@ -307,8 +307,7 @@ PRODUCT_COPY_FILES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    libandroid_net \
-    netutils-wrapper-1.0
+    libandroid_net
 
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor \
