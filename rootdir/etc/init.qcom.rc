@@ -138,6 +138,7 @@ service vendor.qrtr-ns /system/vendor/bin/qrtr-ns -f
     user vendor_qrtr
     group vendor_qrtr
     capabilities NET_BIND_SERVICE
+    task_profiles ServiceCapacityLow
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
