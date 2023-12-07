@@ -43,9 +43,6 @@ persist.camera.xm.green.r=0.97
 vendor.camera.aux.packagelist=com.android.camera,org.lineageos.snap,org.pixelexperience.faceunlock
 vendor.vidc.enc.dcvs.extra-buff-count=2
 
-# Charger
-ro.charger.enable_suspend=true
-
 # Dirac
 audio.dirac.logging=0
 ro.audio.soundfx.dirac=true
@@ -135,7 +132,6 @@ persist.data.df.mux_count=8
 persist.data.df.ul_mode=5
 
 # Radio
-DEVICE_PROVISIONED=1
 keyguard.no_require_sim=true
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
@@ -144,12 +140,10 @@ persist.radio.multisim.config=dsds
 persist.rmnet.data.enable=true
 persist.sys.fflag.override.settings_network_and_internet_v2=true
 persist.sys.fflag.override.settings_provider_model=false
-ril.subscription.types=NV,RUIM
 ro.telephony.block_binder_thread_on_incoming_calls=false
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_cdma_sub=0
 ro.telephony.default_network=22,20
-telephony.lteOnCdmaDevice=1
 
 # RCS
 persist.rcs.supported=1
