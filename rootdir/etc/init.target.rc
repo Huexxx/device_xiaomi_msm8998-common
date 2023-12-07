@@ -36,9 +36,6 @@ on init
     # vold needs keymaster which needs qseecomd
     start vendor.qseecomd
 
-    # Boot-time fs tuning
-    setprop sys.io.scheduler "cfq"
-
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
     # Disable UFS powersaving
@@ -186,7 +183,6 @@ on property:sys.boot_completed=1
     # Post-boot fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sde/queue/iostats 0
-    setprop sys.io.scheduler "bfq"
 
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-3,6-7
