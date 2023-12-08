@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2021, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2019, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -291,18 +291,17 @@ void AgpsStateMachine::requestOrReleaseDataConn(bool request){
     AGnssExtStatusIpV4 nifRequest;
     memset(&nifRequest, 0, sizeof(nifRequest));
 
-    nifRequest.type = (AGpsType) mAgpsType;
+    nifRequest.type = mAgpsType;
     nifRequest.apnTypeMask = mApnTypeMask;
-    nifRequest.subId = mSubId;
     if (request) {
         LOC_LOGD("AGPS Data Conn Request mAgpsType=%d mApnTypeMask=0x%X",
                  mAgpsType, mApnTypeMask);
-        nifRequest.status = AGPS_REQUEST_AGPS_DATA_CONN;
+        nifRequest.status = LOC_GPS_REQUEST_AGPS_DATA_CONN;
     }
     else{
         LOC_LOGD("AGPS Data Conn Release mAgpsType=%d mApnTypeMask=0x%X",
                  mAgpsType, mApnTypeMask);
-        nifRequest.status = AGPS_RELEASE_AGPS_DATA_CONN;
+        nifRequest.status = LOC_GPS_RELEASE_AGPS_DATA_CONN;
     }
 
     mFrameworkStatusV4Cb(nifRequest);
@@ -521,15 +520,15 @@ void AgpsManager::createAgpsStateMachines(const AgpsCbInfo& cbInfo) {
                     (loc_core::ContextBase::mGps_conf.CAPABILITIES & LOC_GPS_CAPABILITY_MSB));
 
     if (NULL == mInternetNif && (cbInfo.atlType & AGPS_ATL_TYPE_WWAN)) {
-        mInternetNif = new AgpsStateMachine(this, AGPS_TYPE_WWAN_ANY);
-        mInternetNif->registerFrameworkStatusCallback((agnssStatusIpV4Callback)cbInfo.statusV4Cb);
+        mInternetNif = new AgpsStateMachine(this, LOC_AGPS_TYPE_WWAN_ANY);
+        mInternetNif->registerFrameworkStatusCallback((AgnssStatusIpV4Cb)cbInfo.statusV4Cb);
         LOC_LOGD("Internet NIF: %p", mInternetNif);
     }
     if (agpsCapable) {
         if (NULL == mAgnssNif && (cbInfo.atlType & AGPS_ATL_TYPE_SUPL) &&
                 (cbInfo.atlType & AGPS_ATL_TYPE_SUPL_ES)) {
-            mAgnssNif = new AgpsStateMachine(this, AGPS_TYPE_SUPL);
-            mAgnssNif->registerFrameworkStatusCallback((agnssStatusIpV4Callback)cbInfo.statusV4Cb);
+            mAgnssNif = new AgpsStateMachine(this, LOC_AGPS_TYPE_SUPL);
+            mAgnssNif->registerFrameworkStatusCallback((AgnssStatusIpV4Cb)cbInfo.statusV4Cb);
             LOC_LOGD("AGNSS NIF: %p", mAgnssNif);
         }
     }
@@ -541,14 +540,14 @@ AgpsStateMachine* AgpsManager::getAgpsStateMachine(AGpsExtType agpsType) {
 
     switch (agpsType) {
 
-        case AGPS_TYPE_INVALID:
-        case AGPS_TYPE_SUPL:
-        case AGPS_TYPE_SUPL_ES:
+        case LOC_AGPS_TYPE_INVALID:
+        case LOC_AGPS_TYPE_SUPL:
+        case LOC_AGPS_TYPE_SUPL_ES:
             if (mAgnssNif == NULL) {
                 LOC_LOGE("NULL AGNSS NIF !");
             }
             return mAgnssNif;
-        case AGPS_TYPE_WWAN_ANY:
+        case LOC_AGPS_TYPE_WWAN_ANY:
             if (mInternetNif == NULL) {
                 LOC_LOGE("NULL Internet NIF !");
             }
@@ -562,18 +561,18 @@ AgpsStateMachine* AgpsManager::getAgpsStateMachine(AGpsExtType agpsType) {
 }
 
 void AgpsManager::requestATL(int connHandle, AGpsExtType agpsType,
-                             LocApnTypeMask apnTypeMask, SubId subId) {
+                             LocApnTypeMask apnTypeMask){
 
     LOC_LOGD("AgpsManager::requestATL(): connHandle %d, agpsType 0x%X apnTypeMask: 0x%X",
                connHandle, agpsType, apnTypeMask);
 
     if (0 == loc_core::ContextBase::mGps_conf.USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL &&
-        AGPS_TYPE_SUPL_ES == agpsType) {
-        agpsType = AGPS_TYPE_SUPL;
-        apnTypeMask &= ~APN_TYPE_EMERGENCY_BIT;
-        apnTypeMask |= APN_TYPE_SUPL_BIT;
+        LOC_AGPS_TYPE_SUPL_ES == agpsType) {
+        agpsType = LOC_AGPS_TYPE_SUPL;
+        apnTypeMask &= ~LOC_APN_TYPE_MASK_EMERGENCY;
+        apnTypeMask |= LOC_APN_TYPE_MASK_SUPL;
         LOC_LOGD("Changed agpsType to non-emergency when USE_EMERGENCY... is 0"
-                 "and removed APN_TYPE_EMERGENCY_BIT from apnTypeMask"
+                 "and removed LOC_APN_TYPE_MASK_EMERGENCY from apnTypeMask"
                  "agpsType 0x%X apnTypeMask : 0x%X",
                  agpsType, apnTypeMask);
     }
@@ -589,7 +588,6 @@ void AgpsManager::requestATL(int connHandle, AGpsExtType agpsType,
     }
     sm->setType(agpsType);
     sm->setApnTypeMask(apnTypeMask);
-    sm->setSubId(subId);
 
     /* Invoke AGPS SM processing */
     AgpsSubscriber subscriber(connHandle, true, false, apnTypeMask);
@@ -637,14 +635,12 @@ void AgpsManager::reportAtlOpenSuccess(
     /* Find the state machine instance */
     AgpsStateMachine* sm = getAgpsStateMachine(agpsType);
 
-    if (sm != NULL) {
-        /* Set bearer and apn info in state machine instance */
-        sm->setBearer(bearerType);
-        sm->setAPN(apnName, apnLen);
+    /* Set bearer and apn info in state machine instance */
+    sm->setBearer(bearerType);
+    sm->setAPN(apnName, apnLen);
 
-        /* Send GRANTED event to state machine */
-        sm->processAgpsEvent(AGPS_EVENT_GRANTED);
-    }
+    /* Send GRANTED event to state machine */
+    sm->processAgpsEvent(AGPS_EVENT_GRANTED);
 }
 
 void AgpsManager::reportAtlOpenFailed(AGpsExtType agpsType){
@@ -653,9 +649,7 @@ void AgpsManager::reportAtlOpenFailed(AGpsExtType agpsType){
 
     /* Fetch SM and send DENIED event */
     AgpsStateMachine* sm = getAgpsStateMachine(agpsType);
-    if (sm != NULL) {
-        sm->processAgpsEvent(AGPS_EVENT_DENIED);
-    }
+    sm->processAgpsEvent(AGPS_EVENT_DENIED);
 }
 
 void AgpsManager::reportAtlClosed(AGpsExtType agpsType){
@@ -664,9 +658,7 @@ void AgpsManager::reportAtlClosed(AGpsExtType agpsType){
 
     /* Fetch SM and send RELEASED event */
     AgpsStateMachine* sm = getAgpsStateMachine(agpsType);
-    if (sm != NULL) {
-        sm->processAgpsEvent(AGPS_EVENT_RELEASED);
-    }
+    sm->processAgpsEvent(AGPS_EVENT_RELEASED);
 }
 
 void AgpsManager::handleModemSSR(){

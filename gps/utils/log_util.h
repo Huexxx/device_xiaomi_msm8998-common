@@ -130,7 +130,7 @@ extern int build_type_prop;
  *                        MODULE EXPORTED FUNCTIONS
  *
  *============================================================================*/
-inline static void loc_logger_init(unsigned long debug, unsigned long timestamp)
+inline void loc_logger_init(unsigned long debug, unsigned long timestamp)
 {
     loc_logger.DEBUG_LEVEL = debug;
 
@@ -156,7 +156,7 @@ inline static void loc_logger_init(unsigned long debug, unsigned long timestamp)
     loc_logger.TIMESTAMP = timestamp;
 }
 
-inline static void log_buffer_init(bool enabled) {
+inline void log_buffer_init(bool enabled) {
     loc_logger.LOG_BUFFER_ENABLE = enabled;
 }
 extern void log_tag_level_map_init();

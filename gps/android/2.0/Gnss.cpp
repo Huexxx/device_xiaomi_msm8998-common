@@ -501,7 +501,6 @@ Return<bool> Gnss::injectBestLocation(const GnssLocation& gnssLocation) {
     if (nullptr != gnssInterface) {
         Location location = {};
         convertGnssLocation(gnssLocation, location);
-        location.techMask |= LOCATION_TECHNOLOGY_HYBRID_BIT;
         gnssInterface->odcpiInject(location);
     }
     return true;
@@ -644,7 +643,6 @@ Return<bool> Gnss::injectBestLocation_2_0(const V2_0::GnssLocation& gnssLocation
     if (nullptr != gnssInterface) {
         Location location = {};
         convertGnssLocation(gnssLocation, location);
-        location.techMask |= LOCATION_TECHNOLOGY_HYBRID_BIT;
         gnssInterface->odcpiInject(location);
     }
     return true;

@@ -1,4 +1,4 @@
-/* Copyright (c) 2015-2021, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2015-2020, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -46,6 +46,9 @@ COUT SystemStatusOsObserver::containerTransfer(CINT& inContainer) {
 }
 
 SystemStatusOsObserver::~SystemStatusOsObserver() {
+    // Close data-item library handle
+    DataItemsFactoryProxy::closeDataItemLibraryHandle();
+
     // Destroy cache
     for (auto each : mDataItemCache) {
         if (nullptr != each.second) {
@@ -109,10 +112,10 @@ void SystemStatusOsObserver::subscribe(const list<DataItemId>& l, IDataItemObser
             // Send subscription set to framework
             if (nullptr != mParent->mContext.mSubscriptionObj) {
                 if (mToRequestData) {
-                    LOC_LOGd("Request Data sent to framework for the following");
+                    LOC_LOGD("Request Data sent to framework for the following");
                     mParent->mContext.mSubscriptionObj->requestData(diItemlist, mParent);
                 } else if (!dataItemsToSubscribe.empty()) {
-                    LOC_LOGd("Subscribe Request sent to framework for the following");
+                    LOC_LOGD("Subscribe Request sent to framework for the following");
                     mParent->logMe(dataItemsToSubscribe);
                     mParent->mContext.mSubscriptionObj->subscribe(
                             containerTransfer<unordered_set<DataItemId>, list<DataItemId>>(
@@ -174,7 +177,7 @@ void SystemStatusOsObserver::updateSubscription(
             if (nullptr != mParent->mContext.mSubscriptionObj) {
                 // Send subscription set to framework
                 if (!dataItemsToSubscribe.empty()) {
-                    LOC_LOGd("Subscribe Request sent to framework for the following");
+                    LOC_LOGD("Subscribe Request sent to framework for the following");
                     mParent->logMe(dataItemsToSubscribe);
 
                     mParent->mContext.mSubscriptionObj->subscribe(
@@ -185,7 +188,7 @@ void SystemStatusOsObserver::updateSubscription(
 
                 // Send unsubscribe to framework
                 if (!dataItemsToUnsubscribe.empty()) {
-                    LOC_LOGd("Unsubscribe Request sent to framework for the following");
+                    LOC_LOGD("Unsubscribe Request sent to framework for the following");
                     mParent->logMe(dataItemsToUnsubscribe);
 
                     mParent->mContext.mSubscriptionObj->unsubscribe(
@@ -227,7 +230,7 @@ void SystemStatusOsObserver::unsubscribe(
                                                      &dataItemsToUnsubscribe, nullptr);
 
             if (nullptr != mParent->mContext.mSubscriptionObj && !dataItemsToUnsubscribe.empty()) {
-                LOC_LOGd("Unsubscribe Request sent to framework for the following data items");
+                LOC_LOGD("Unsubscribe Request sent to framework for the following data items");
                 mParent->logMe(dataItemsToUnsubscribe);
 
                 // Send unsubscribe to framework
@@ -268,7 +271,7 @@ void SystemStatusOsObserver::unsubscribeAll(IDataItemObserver* client)
                 if (!dataItemsToUnsubscribe.empty() &&
                     nullptr != mParent->mContext.mSubscriptionObj) {
 
-                    LOC_LOGd("Unsubscribe Request sent to framework for the following data items");
+                    LOC_LOGD("Unsubscribe Request sent to framework for the following data items");
                     mParent->logMe(dataItemsToUnsubscribe);
 
                     // Send unsubscribe to framework
@@ -344,15 +347,18 @@ void SystemStatusOsObserver::notify(const list<IDataItemCore*>& dlist)
     };
 
     if (!dlist.empty()) {
-        vector<IDataItemCore*> dataItemVec;
+        vector<IDataItemCore*> dataItemVec(dlist.size());
 
         for (auto each : dlist) {
 
-            IDataItemCore* di = DataItemsFactoryProxy::createNewDataItem(each);
+            IDataItemCore* di = DataItemsFactoryProxy::createNewDataItem(each->getId());
             if (nullptr == di) {
                 LOC_LOGw("Unable to create dataitem:%d", each->getId());
                 continue;
             }
+
+            // Copy contents into the newly created data item
+            di->copy(each);
 
             // add this dataitem if updated from last one
             dataItemVec.push_back(di);
@@ -375,7 +381,7 @@ void SystemStatusOsObserver::notify(const list<IDataItemCore*>& dlist)
 void SystemStatusOsObserver::turnOn(DataItemId dit, int timeOut)
 {
     if (nullptr == mContext.mFrameworkActionReqObj) {
-        LOC_LOGe("Framework action request object is NULL");
+        LOC_LOGE("%s:%d]: Framework action request object is NULL", __func__, __LINE__);
         return;
     }
 
@@ -386,7 +392,7 @@ void SystemStatusOsObserver::turnOn(DataItemId dit, int timeOut)
         // Add reference count as 1 and add dataitem to map
         pair<DataItemId, int> cpair(dit, 1);
         mActiveRequestCount.insert(cpair);
-        LOC_LOGd("Sending turnOn request");
+        LOC_LOGD("Sending turnOn request");
 
         // Send action turn on to framework
         struct HandleTurnOnMsg : public LocMsg {
@@ -407,14 +413,14 @@ void SystemStatusOsObserver::turnOn(DataItemId dit, int timeOut)
     else {
         // Found in map, update reference count
         citer->second++;
-        LOC_LOGd("turnOn - Data item:%d Num_refs:%d", dit, citer->second);
+        LOC_LOGD("turnOn - Data item:%d Num_refs:%d", dit, citer->second);
     }
 }
 
 void SystemStatusOsObserver::turnOff(DataItemId dit)
 {
     if (nullptr == mContext.mFrameworkActionReqObj) {
-        LOC_LOGe("Framework action request object is NULL");
+        LOC_LOGE("%s:%d]: Framework action request object is NULL", __func__, __LINE__);
         return;
     }
 
@@ -423,7 +429,7 @@ void SystemStatusOsObserver::turnOff(DataItemId dit)
     if (citer != mActiveRequestCount.end()) {
         // found
         citer->second--;
-        LOC_LOGd("turnOff - Data item:%d Remaining:%d", dit, citer->second);
+        LOC_LOGD("turnOff - Data item:%d Remaining:%d", dit, citer->second);
         if(citer->second == 0) {
             // if this was last reference, remove item from map and turn off module
             mActiveRequestCount.erase(citer);
@@ -446,62 +452,73 @@ void SystemStatusOsObserver::turnOff(DataItemId dit)
 }
 
 #ifdef USE_GLIB
-bool SystemStatusOsObserver::connectBackhaul(const BackhaulContext& ctx)
+bool SystemStatusOsObserver::connectBackhaul(const string& clientName)
 {
     bool result = false;
 
     if (mContext.mFrameworkActionReqObj != NULL) {
         struct HandleConnectBackhaul : public LocMsg {
-            HandleConnectBackhaul(IFrameworkActionReq* fwkActReq, const BackhaulContext& ctx) :
-                    mFwkActionReqObj(fwkActReq), mCtx(ctx) {}
+            HandleConnectBackhaul(IFrameworkActionReq* fwkActReq, const string& clientName) :
+                    mClientName(clientName), mFwkActionReqObj(fwkActReq) {}
             virtual ~HandleConnectBackhaul() {}
             void proc() const {
                 LOC_LOGi("HandleConnectBackhaul::enter");
-                mFwkActionReqObj->connectBackhaul(mCtx);
+                mFwkActionReqObj->connectBackhaul(mClientName);
                 LOC_LOGi("HandleConnectBackhaul::exit");
             }
             IFrameworkActionReq* mFwkActionReqObj;
-            BackhaulContext mCtx;
+            string mClientName;
         };
         mContext.mMsgTask->sendMsg(
-                new (nothrow) HandleConnectBackhaul(mContext.mFrameworkActionReqObj, ctx));
+                new (nothrow) HandleConnectBackhaul(mContext.mFrameworkActionReqObj, clientName));
         result = true;
-    } else {
+    }
+    else {
         LOC_LOGe("Framework action request object is NULL.Caching connect request: %s",
-                 ctx.clientName.c_str());
-        LOC_LOGd("Adding client context to BackHaulConnReqCache list");
-        mBackHaulConnReqCache[ctx.clientName] = ctx;
+                clientName.c_str());
+        ClientBackhaulReqCache::const_iterator iter = mBackHaulConnReqCache.find(clientName);
+        if (iter == mBackHaulConnReqCache.end()) {
+            // not found in set. first time receiving from request from client
+            LOC_LOGe("Adding client to BackHaulConnReqCache list");
+            mBackHaulConnReqCache.insert(clientName);
+        }
         result = false;
     }
     return result;
+
 }
 
-bool SystemStatusOsObserver::disconnectBackhaul(const BackhaulContext& ctx)
+bool SystemStatusOsObserver::disconnectBackhaul(const string& clientName)
 {
     bool result = false;
 
     if (mContext.mFrameworkActionReqObj != NULL) {
         struct HandleDisconnectBackhaul : public LocMsg {
-            HandleDisconnectBackhaul(IFrameworkActionReq* fwkActReq, const BackhaulContext& ctx) :
-                    mFwkActionReqObj(fwkActReq), mCtx(ctx) {}
+            HandleDisconnectBackhaul(IFrameworkActionReq* fwkActReq, const string& clientName) :
+                    mClientName(clientName), mFwkActionReqObj(fwkActReq) {}
             virtual ~HandleDisconnectBackhaul() {}
             void proc() const {
                 LOC_LOGi("HandleDisconnectBackhaul::enter");
-                mFwkActionReqObj->disconnectBackhaul(mCtx);
+                mFwkActionReqObj->disconnectBackhaul(mClientName);
                 LOC_LOGi("HandleDisconnectBackhaul::exit");
             }
             IFrameworkActionReq* mFwkActionReqObj;
-            BackhaulContext mCtx;
+            string mClientName;
         };
         mContext.mMsgTask->sendMsg(
-                new (nothrow) HandleDisconnectBackhaul(mContext.mFrameworkActionReqObj, ctx));
+                new (nothrow) HandleDisconnectBackhaul(mContext.mFrameworkActionReqObj,
+                        clientName));
     }
     else {
         LOC_LOGe("Framework action request object is NULL.Caching disconnect request: %s",
-                 ctx.clientName.c_str());
+                clientName.c_str());
         // Check if client has requested for backhaul connection.
-        LOC_LOGd("Removing client from BackHaulConnReqCache list");
-        mBackHaulConnReqCache.erase(ctx.clientName);
+        ClientBackhaulReqCache::const_iterator iter = mBackHaulConnReqCache.find(clientName);
+        if (iter != mBackHaulConnReqCache.end()) {
+            // client found, remove from set.
+            LOC_LOGd("Removing client from BackHaulConnReqCache list");
+            mBackHaulConnReqCache.erase(iter);
+        }
         result = false;
     }
     return result;
@@ -525,7 +542,7 @@ void SystemStatusOsObserver::sendCachedDataItems(
             if (citer != mDataItemCache.end()) {
                 string dv;
                 citer->second->stringify(dv);
-                LOC_LOGi("DataItem: %s >> %s", dv.c_str(), clientName.c_str());
+                LOC_LOGI("DataItem: %s >> %s", dv.c_str(), clientName.c_str());
                 dataItems.push_front(citer->second);
             }
         }
@@ -547,23 +564,27 @@ bool SystemStatusOsObserver::updateCache(IDataItemCore* d)
     // handling it, so SystemStatusOsObserver also doesn't.
     // So it has to be true to proceed.
     if (nullptr != d && mSystemStatus->eventDataItemNotify(d)) {
-        dataItemUpdated = true;
         auto citer = mDataItemCache.find(d->getId());
         if (citer == mDataItemCache.end()) {
             // New data item; not found in cache
-            IDataItemCore* dataitem = DataItemsFactoryProxy::createNewDataItem(d);
+            IDataItemCore* dataitem = DataItemsFactoryProxy::createNewDataItem(d->getId());
             if (nullptr != dataitem) {
+                // Copy the contents of the data item
+                dataitem->copy(d);
                 // Insert in mDataItemCache
                 mDataItemCache.insert(std::make_pair(d->getId(), dataitem));
+                dataItemUpdated = true;
             }
         } else {
             // Found in cache; Update cache if necessary
-            citer->second->copyFrom(d);
+            citer->second->copy(d, &dataItemUpdated);
+        }
+
+        if (dataItemUpdated) {
+            LOC_LOGV("DataItem:%d updated:%d", d->getId(), dataItemUpdated);
         }
     }
-    if (nullptr != d) {
-        LOC_LOGd("DataItem:%d updated:%d", d->getId(), dataItemUpdated);
-    }
+
     return dataItemUpdated;
 }
 

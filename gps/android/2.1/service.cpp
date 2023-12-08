@@ -1,6 +1,5 @@
 /*
-
- * Copyright (c) 2017-2021, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
  * Not a Contribution
  */
 /*
@@ -25,8 +24,6 @@
 #include <hidl/LegacySupport.h>
 #include "loc_cfg.h"
 #include "loc_misc_utils.h"
-#include <dlfcn.h>
-
 
 extern "C" {
 #include "vndfwk-detect.h"
@@ -46,48 +43,6 @@ using android::status_t;
 using android::OK;
 
 typedef int vendorEnhancedServiceMain(int /* argc */, char* /* argv */ []);
-
-#define GNSS_AUTO_POWER_LIBNAME  "libgnssauto_power.so"
-#define GNSS_WEAR_POWER_LIBNAME  "libgnsswear_power.so"
-
-typedef const void* (*gnssPowerHandler)(void);
-
-int initializeGnssAutoPowerHandler() {
-
-    /*void * handle = nullptr;
-    gnssPowerHandler getter = (gnssPowerHandler) dlGetSymFromLib(handle, GNSS_AUTO_POWER_LIBNAME,
-                                                                 "initGnssAutoPowerHandler");
-    if (nullptr != getter) {
-        getter();
-        ALOGI("GnssAutoPowerHandler Initialized!");
-        return 0;
-    }*/
-    return -1;
-}
-
-int initializeGnssWearPowerHandler() {
-
-    /*void * handle = nullptr;
-    gnssPowerHandler getter = (gnssPowerHandler) dlGetSymFromLib(handle, GNSS_WEAR_POWER_LIBNAME,
-                                                                 "initGnssWearPowerHandler");
-    if (nullptr != getter) {
-        getter();
-        ALOGI("GnssWearPowerHandler Initialized!");
-        return 0;
-    }*/
-    return -1;
-}
-
-void initializeGnssPowerHandler() {
-
-    if (0 != initializeGnssAutoPowerHandler()) {
-        ALOGW("Gnss Auto Power Handler unavailable.");
-
-        if (0 != initializeGnssWearPowerHandler()) {
-            ALOGW("Gnss Wear Power Handler unavailable.");
-        }
-    }
-}
 
 int main() {
 
@@ -117,7 +72,6 @@ int main() {
     #else
         ALOGI("LOC_HIDL_VERSION not defined.");
     #endif
-        initializeGnssPowerHandler();
         joinRpcThreadpool();
     } else {
         ALOGE("Error while registering IGnss 2.1 service: %d", status);

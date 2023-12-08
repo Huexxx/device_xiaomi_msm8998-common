@@ -1,4 +1,4 @@
-/* Copyright (c) 2017-2021 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2017-2020 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -101,7 +101,7 @@ ssize_t Sock::recvfrom(const LocIpcRecver& recver, const shared_ptr<ILocIpcListe
     if (nBytes > 0) {
         if (strncmp(msg.data(), MSG_ABORT, sizeof(MSG_ABORT)) == 0) {
             LOC_LOGi("recvd abort msg.data %s", msg.data());
-            nBytes = -100;
+            nBytes = 0;
         } else if (strncmp(msg.data(), LOC_IPC_HEAD, sizeof(LOC_IPC_HEAD) - 1)) {
             // short message
             msg.resize(nBytes);
@@ -228,19 +228,11 @@ protected:
     mutable bool mFirstTime;
 
     virtual ssize_t send(const uint8_t data[], uint32_t length, int32_t /* msgId */) const {
-        int connStatus = 0;
         if (mFirstTime) {
-            connStatus = ::connect(mSock->mSid, (const struct sockaddr*)&mAddr, sizeof(mAddr));
-            if (0 == connStatus) {
-                mFirstTime = false;
-            }
+            mFirstTime = false;
+            ::connect(mSock->mSid, (const struct sockaddr*)&mAddr, sizeof(mAddr));
         }
-
-        if (0 == connStatus) {
-            return mSock->send(data, length, 0, (struct sockaddr*)&mAddr, sizeof(mAddr));
-        }
-
-        return 0;
+        return mSock->send(data, length, 0, (struct sockaddr*)&mAddr, sizeof(mAddr));
     }
 
 public:
@@ -267,7 +259,9 @@ public:
     inline virtual const char* getName() const override { return mName.data(); };
     inline virtual void abort() const override {
         if (isSendable()) {
-            mSock->sendAbort(0, (struct sockaddr*)&mAddr, sizeof(mAddr));
+            sockaddr_in loopBackAddr = {.sin_family = AF_INET, .sin_port = htons(mPort),
+                    .sin_addr = {htonl(INADDR_LOOPBACK)}};
+            mSock->sendAbort(0, (struct sockaddr*)&loopBackAddr, sizeof(loopBackAddr));
         }
     }
     inline virtual unique_ptr<LocIpcSender> getLastSender() const override {
@@ -287,14 +281,7 @@ protected:
                 mConnFd = -1;
             }
         }
-        ssize_t nBytes = mSock->recv(*this, mDataCb, 0, (struct sockaddr*)&mAddr, &size, mConnFd);
-        if (0 == nBytes) {
-            // tcp connection closed, accept new connection for next recv
-            // But do not exit the receiver thread by returning 0 bytes.
-            mConnFd = -1;
-            nBytes = 100;
-        }
-        return nBytes;
+        return mSock->recv(*this, mDataCb, 0, (struct sockaddr*)&mAddr, &size, mConnFd);
     }
 public:
     inline LocIpcInetTcpRecver(const shared_ptr<ILocIpcListener>& listener, const char* name,
@@ -325,7 +312,7 @@ public:
     inline LocIpcRunnable(LocIpc& locIpc, unique_ptr<LocIpcRecver>& ipcRecver) :
             mAbortCalled(false),
             mLocIpc(locIpc),
-            mIpcRecver(std::move(ipcRecver)) {}
+            mIpcRecver(move(ipcRecver)) {}
     inline virtual bool run() override {
         if (mIpcRecver != nullptr) {
             mLocIpc.startBlockingListening(*(mIpcRecver.get()));
@@ -346,7 +333,8 @@ public:
 
 bool LocIpc::startNonBlockingListening(unique_ptr<LocIpcRecver>& ipcRecver) {
     if (ipcRecver != nullptr && ipcRecver->isRecvable()) {
-        std::string threadName = generateThreadName(ipcRecver->getName());
+        std::string threadName("LocIpc-");
+        threadName.append(ipcRecver->getName());
         return mThread.start(threadName.c_str(), make_shared<LocIpcRunnable>(*this, ipcRecver));
     } else {
         LOC_LOGe("ipcRecver is null OR ipcRecver->recvable() is fasle");
@@ -378,15 +366,6 @@ void LocIpc::stopBlockingListening(LocIpcRecver& ipcRecver) {
 
 bool LocIpc::send(LocIpcSender& sender, const uint8_t data[], uint32_t length, int32_t msgId) {
     return sender.sendData(data, length, msgId);
-}
-
-std::string LocIpc::generateThreadName(const std::string& recverName) {
-    std::string threadName("Ipc-");
-    int recverNameLen = recverName.length();
-    // Total thread name length is 16 letters.
-    // Concatenate with up to 11 chars starting from the last char of the ipc name.
-    threadName.append(recverName.substr(recverNameLen <= 11 ? 0 : (recverNameLen - 11)));
-    return threadName;
 }
 
 shared_ptr<LocIpcSender> LocIpc::getLocIpcLocalSender(const char* localSockName) {

@@ -1,4 +1,4 @@
-/* Copyright (c) 2017-2019, 2021, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2017-2019, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -42,8 +42,6 @@ static uint32_t startBatching(LocationAPI* client, BatchingOptions&);
 static void stopBatching(LocationAPI* client, uint32_t id);
 static void updateBatchingOptions(LocationAPI* client, uint32_t id, BatchingOptions&);
 static void getBatchedLocations(LocationAPI* client, uint32_t id, size_t count);
-static void updateSystemPowerState(PowerStateType systemPowerState);
-
 
 static const BatchingInterface gBatchingInterface = {
     sizeof(BatchingInterface),
@@ -55,8 +53,7 @@ static const BatchingInterface gBatchingInterface = {
     startBatching,
     stopBatching,
     updateBatchingOptions,
-    getBatchedLocations,
-    updateSystemPowerState
+    getBatchedLocations
 };
 
 #ifndef DEBUG_X86
@@ -135,9 +132,3 @@ static void getBatchedLocations(LocationAPI* client, uint32_t id, size_t count)
     }
 }
 
-static void updateSystemPowerState(PowerStateType systemPowerState)
-{
-    if (NULL != gBatchingAdapter) {
-        gBatchingAdapter->updateSystemPowerStateCommand(systemPowerState);
-    }
-}
