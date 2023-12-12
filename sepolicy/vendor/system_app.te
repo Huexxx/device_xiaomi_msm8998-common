@@ -1,3 +1,5 @@
+allow system_app hal_lineage_trust_hwservice:hwservice_manager find;
+
 # Parts
 allow system_app sysfs_sectouch:file rwx_file_perms;
 allow system_app sysfs_leds:dir search;
@@ -14,8 +16,13 @@ allow system_app sysfs_kcal:dir { search };
 # FastCharge
 allow system_app sysfs_fastcharge:file rwx_file_perms;
 
+# Settings
+allow system_app privapp_data_file:dir r_dir_perms;
+
 # Zram
 allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
 
 allow system_app zygote:unix_stream_socket { getopt };
+
+get_prop(system_app, vendor_default_prop)
