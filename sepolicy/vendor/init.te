@@ -7,6 +7,7 @@ allow init init:socket { create };
 allow init ipa_dev:chr_file { open };
 allow init same_process_hal_file:file { execute };
 allow init servicemanager:binder { call transfer };
+allow init sysfs_battery_supply:file { setattr };
 allow init sysfs_cpu_boost:file { write open };
 allow init sysfs_devfreq:{ file lnk_file } { read setattr };
 allow init sysfs_devices_system_cpu:file { write };
