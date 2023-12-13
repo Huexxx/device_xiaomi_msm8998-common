@@ -12,3 +12,6 @@ vendor.nxp.nxpnfc::INxpNfc                                    u:object_r:hal_nxp
 
 # Vibrator AIDL
 android.hardware.vibrator::IVibrator                          u:object_r:hal_vibrator_hwservice:s0
+
+# Wireless charger
+vendor.google.wireless_charger::IWirelessCharger              u:object_r:hal_wlc_hwservice:s0
