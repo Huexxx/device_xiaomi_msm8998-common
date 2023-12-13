@@ -4,5 +4,3 @@ allow system_server default_android_service:service_manager { find };
 allow system_server init:binder { call };
 allow system_server isolated_compute_app:unix_stream_socket { getopt };
 allow system_server sysfs:file { read open getattr };
-
-set_prop(system_server, default_prop)
