@@ -21,3 +21,9 @@ type media_settings_xml_prop, property_type;
 
 # Recovery
 type recovery_prop, property_type;
+
+# Gnss
+type gnss_prop, property_type;
+
+# Iorap
+type iorap_prop, property_type;

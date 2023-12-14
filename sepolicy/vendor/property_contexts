@@ -72,3 +72,9 @@ media.settings.xml                                            u:object_r:media_s
 
 # Recovery
 ro.recovery.                                                  u:object_r:recovery_prop:s0
+
+# Gnss
+persist.backup.ntpServer                                      u:object_r:gnss_prop:s0
+
+# Iorap
+ro.iorapd.enable                                              u:object_r:iorap_prop:s0
