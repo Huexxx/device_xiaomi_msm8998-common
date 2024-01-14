@@ -1,0 +1,5 @@
+allow init netutils_wrapper_exec:file { getattr };
+allow init rs_exec:file { getattr };
+allow init sdcardd_exec:file { getattr };
+allow init sgdisk_exec:file { getattr };
+allow init vold_prepare_subdirs_exec:file { getattr };
