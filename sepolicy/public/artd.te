@@ -1,0 +1,1 @@
+allow artd apk_tmp_file:dir { read };
