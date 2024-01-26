@@ -23,6 +23,9 @@ bluetooth.profile.sap.server.enabled?=true
 # Display
 ro.launcher.blur.appLaunch=0
 
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
+
 # IMS
 ro.telephony.block_binder_thread_on_incoming_calls=false
 
