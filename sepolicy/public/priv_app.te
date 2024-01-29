@@ -2,3 +2,6 @@ allow priv_app proc_max_map_count:file r_file_perms;
 
 # com.android.vending
 allow priv_app device:dir open;
+
+# com.google.android.googlequicksearchbox
+allow priv_app metadata_file:dir read;
