@@ -425,6 +425,12 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librmnetctl
 
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.1-service.wrapper.xiaomi_msm8998 \
+    android.hardware.radio.c_shim@1.0.so \
+    android.hardware.radio.c_shim@1.1.so \
+    android.hardware.radio.c_shim@1.2.so
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qmi_fw.conf:$(TARGET_COPY_OUT_VENDOR)/etc/qmi_fw.conf
 

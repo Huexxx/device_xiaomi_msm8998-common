@@ -111,6 +111,14 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>_mi8998.hardware.radio.oldcfg</name>
+        <version>1.0-2</version>
+        <interface>
+            <name>IRadioOldcfg</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.radio.config</name>
         <version>1.0-2</version>
         <interface>

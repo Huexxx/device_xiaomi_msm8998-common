@@ -15,3 +15,6 @@ android.hardware.vibrator::IVibrator                          u:object_r:hal_vib
 
 # Wireless charger
 vendor.google.wireless_charger::IWirelessCharger              u:object_r:hal_wlc_hwservice:s0
+
+# RIL
+_mi8998.hardware.radio.oldcfg::IRadioOldcfg	              u:object_r:vendor_hal_radio_oldcfg_hwservice:s0

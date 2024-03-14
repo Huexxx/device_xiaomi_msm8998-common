@@ -268,6 +268,9 @@ service vendor.panel-info /system/vendor/bin/init.panel_info.sh
     user root
     oneshot
 
+on property:init.svc.vendor.qcrild=running
+    restart vendor.radio-config-hal-1-1.wrapper
+
 service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
