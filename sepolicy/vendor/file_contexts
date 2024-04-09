@@ -52,6 +52,3 @@
 
 # IPA
 /vendor/bin/init\.qcom\.ipastart\.sh                          u:object_r:init-qcom-ipastart-sh_exec:s0
-
-# Graphics
-/sys/devices/virtual/graphics/fb([0-3])+/idle_state           u:object_r:sysfs_graphics:s0
