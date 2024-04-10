@@ -101,6 +101,7 @@ drm.service.enabled=true
 ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
 
 # GPS
+persist.backup.ntpServer=0.pool.ntp.org
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
