@@ -1,1 +1,2 @@
-allow kernel apk_tmp_file:dir { read };
+allow kernel apk_tmp_file:dir r_dir_perms;
+allow kernel apk_tmp_file:file r_file_perms;
