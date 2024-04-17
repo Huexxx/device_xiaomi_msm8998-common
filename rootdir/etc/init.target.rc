@@ -28,6 +28,9 @@
 #
 
 on init
+    # Allow everybody to check selinux enforce status
+    chmod 0644 /sys/fs/selinux/enforce
+
     # QSEE rpmb listener need symlink for bootdevice
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
