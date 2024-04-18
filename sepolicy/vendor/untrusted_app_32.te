@@ -1,6 +1,2 @@
 # Aperture
 get_prop(untrusted_app_32, vendor_default_prop)
-
-# KernelSU
-allow untrusted_app_32 shell_test_data_file:dir { search };
-allow untrusted_app_32 postinstall_mnt_dir:dir { getattr };

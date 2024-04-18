@@ -1,0 +1,4 @@
+# KernelSU
+allow untrusted_app_32 selinuxfs:file { read open };
+allow untrusted_app_32 shell_test_data_file:dir { search };
+allow untrusted_app_32 postinstall_mnt_dir:dir { getattr };
