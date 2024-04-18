@@ -1,4 +1,3 @@
-allow init app_data_file:file { read open getattr };
 allow init dnsmasq_exec:file { getattr };
 allow init hal_perf_default:binder { call };
 allow init hal_perf_hwservice:hwservice_manager { find };
