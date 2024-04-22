@@ -14,6 +14,20 @@
 // limitations under the License.
 
 cc_library_shared {
+    name: "libcamera_shim",
+    srcs: [
+        "lib-camera/libharfbuzz_ng.cpp",
+        "lib-camera/libheif.cpp",
+        "lib-camera/libicuuc.cpp",
+        "lib-camera/libminikin.cpp",
+    ],
+    whole_static_libs: [
+        "libft2.nodep",
+    ],
+    vendor: true,
+}
+
+cc_library_shared {
     name: "libpiex_shim",
     srcs: [
         "lib-piex/lib-piex.cpp",
