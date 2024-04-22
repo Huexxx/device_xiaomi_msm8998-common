@@ -52,6 +52,7 @@ debug.hwui.renderer=skiagl
 debug.hwui.skia_atrace_enabled=false
 debug.hwui.use_buffer_age=false
 debug.renderengine.backend=skiaglthreaded
+debug.sf.auto_latch_unsignaled=0
 debug.sf.enable_gl_backpressure=0
 debug.sf.enable_transaction_tracing=false
 debug.sf.predict_hwc_composition_strategy=0
