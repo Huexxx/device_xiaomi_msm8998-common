@@ -109,6 +109,7 @@ persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
 # Display
+vendor.display.disable_metadata_dynamic_fps=1
 vendor.display.disable_partial_split=1
 vendor.display.disable_rotator_downscale=1
 vendor.display.disable_scaler=1
