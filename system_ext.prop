@@ -33,15 +33,8 @@ ro.ril.power_collapse=1
 wifi.supplicant_scan_interval=240
 
 # Camera
-camera.shutter_sound.blacklist=com.android.camera
-persist.camera.eis.enable=1
-persist.camera.privapp.list=com.android.camera,com.google.android.GoogleCameraEng,org.codeaurora.snapcam
-persist.camera.set.afd=4
-persist.camera.stats.test=5
 persist.camera.xm.green.b=0.96
 persist.camera.xm.green.r=0.97
-vendor.camera.aux.packagelist=com.android.camera,org.lineageos.snap,org.pixelexperience.faceunlock
-vendor.vidc.enc.dcvs.extra-buff-count=2
 
 # Dirac
 audio.dirac.logging=0

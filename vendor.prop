@@ -79,10 +79,14 @@ persist.vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 persist.vendor.camera.HAL3.enabled=1
+persist.vendor.camera.aux.camera=0
+persist.vendor.camera.dual.camera=0
+persist.vendor.camera.eis.enable=1
 persist.vendor.camera.is_type=4
 persist.vendor.camera.perflock.enable=0
 persist.vendor.camera.set.afd=4
-vendor.camera.hal1.packagelist=com.android.camera
+persist.vendor.camera.stats.test=5
+vendor.vidc.enc.dcvs.extra-buff-count=2
 
 # Charger
 ro.charger.enable_suspend=true
