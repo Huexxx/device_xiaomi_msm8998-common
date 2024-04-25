@@ -1,1 +1,2 @@
+get_prop(cameraserver, media_settings_xml_prop)
 set_prop(cameraserver, system_prop)
