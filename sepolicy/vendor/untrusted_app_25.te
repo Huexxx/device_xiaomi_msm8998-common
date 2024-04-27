@@ -1,1 +1,8 @@
+# GCams
+get_prop(untrusted_app_25, camera_prop)
+get_prop(untrusted_app_25, vendor_adsprpc_prop)
+allow untrusted_app_25 adsprpcd_file:dir r_dir_perms;
+allow untrusted_app_25 adsprpcd_file:file r_file_perms;
+allow untrusted_app_25 rootfs:dir r_dir_perms;
+
 allow untrusted_app_25 zygote:unix_stream_socket { getopt };

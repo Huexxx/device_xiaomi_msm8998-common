@@ -1,6 +1,11 @@
+# GCams
+get_prop(untrusted_app, camera_prop)
+get_prop(untrusted_app, vendor_adsprpc_prop)
+allow untrusted_app adsprpcd_file:dir r_dir_perms;
+allow untrusted_app adsprpcd_file:file r_file_perms;
+allow untrusted_app rootfs:dir r_dir_perms;
 allow untrusted_app zygote:unix_stream_socket { getopt };
 
-allow untrusted_app camera_prop:file { getattr open };
 allow untrusted_app cnss_prop:file { getattr open };
 allow untrusted_app dirac_prop:file { getattr open };
 allow untrusted_app gnss_prop:file { getattr open };
@@ -9,7 +14,6 @@ allow untrusted_app media_settings_xml_prop:file { getattr open };
 allow untrusted_app recovery_prop:file { getattr open };
 allow untrusted_app sensors_panel_prop:file { getattr open };
 allow untrusted_app thermal_prop:file { getattr open };
-allow untrusted_app vendor_adsprpc_prop:file { getattr open };
 allow untrusted_app vendor_alarm_boot_prop:file { getattr open };
 allow untrusted_app vendor_am_prop:file { getattr open };
 allow untrusted_app vendor_audio_debug_prop:file { getattr open };

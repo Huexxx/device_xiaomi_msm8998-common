@@ -1,2 +1,9 @@
+# GCams
+get_prop(untrusted_app_32, camera_prop)
+get_prop(untrusted_app_32, vendor_adsprpc_prop)
+allow untrusted_app_32 adsprpcd_file:dir r_dir_perms;
+allow untrusted_app_32 adsprpcd_file:file r_file_perms;
+allow untrusted_app_32 rootfs:dir r_dir_perms;
+
 # Aperture
 get_prop(untrusted_app_32, vendor_default_prop)
