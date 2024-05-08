@@ -82,6 +82,14 @@
         </interface>
     </hal>
     <hal format="aidl">
+        <name>android.hardware.light</name>
+        <version>2</version>
+        <interface>
+            <name>ILights</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl">
         <name>android.hardware.power</name>
         <version>3</version>
         <interface>
