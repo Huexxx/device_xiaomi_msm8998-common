@@ -1,0 +1,2 @@
+# android.frameworks.sensorservice through libsensorndkbridge
+allow location fwk_sensor_service:service_manager find;
