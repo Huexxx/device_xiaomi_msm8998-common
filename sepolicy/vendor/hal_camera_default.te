@@ -1,3 +1,5 @@
+allow hal_camera_default hal_graphics_allocator_service:service_manager find;
+
 allow hal_camera_default system_file:file r_file_perms;
 allow hal_camera_default diag_device:chr_file { read write open };
 
