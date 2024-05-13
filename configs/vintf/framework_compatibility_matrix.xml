@@ -291,6 +291,14 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.cacert</name>
+        <version>1.0</version>
+        <interface>
+            <name>IService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.data.connection</name>
         <version>1.1</version>
         <interface>
@@ -330,6 +338,14 @@
         <interface>
             <name>IFmHci</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.mwqemadapter</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMwqemAdapter</name>
+            <instance>MwqemAdapter</instance>
         </interface>
     </hal>
     <hal format="hidl">
