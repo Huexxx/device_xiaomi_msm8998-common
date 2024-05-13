@@ -107,6 +107,7 @@ ro.crypto.volume.options=::v1
 ro.vendor.use_data_netmgrd=true
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
+persist.vendor.data.profile_update=true
 
 # Display
 vendor.display.disable_metadata_dynamic_fps=1
