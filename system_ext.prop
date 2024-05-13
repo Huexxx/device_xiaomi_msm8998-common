@@ -166,9 +166,6 @@ persist.rcs.supported=1
 # System
 persist.sys.binary_xml=false
 
-# TimeService
-persist.timed.enable=true
-
 # Wlan
 wifi.interface=wlan0
 
