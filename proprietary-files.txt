@@ -501,8 +501,10 @@ vendor/lib/libpn553_fw.so|a7e6076f426314c0186af4c256868959ee636d5d
 
 # PD - from LA.UM.9.2.r1-03500-SDMxx0.0
 vendor/bin/pd-mapper|8eb9717d2ee4da59c64ec89a85bf4e384663322b
-vendor/lib64/libpdmapper.so|dd589e58135e9ef3c952c5d0af9dce2c91df5014
-vendor/lib64/libpdnotifier.so|8e7b07e2b16c3931b93605deb38f2452ff57037b
+
+# PD - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
+vendor/lib64/libpdmapper.so|859a6acc25bf64a0503f333e960bf99d322f9f7e
+vendor/lib64/libpdnotifier.so|ceb89e9fd7ded653655249ac68ccdbb238f6bedf
 
 # Peripheral manager - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
 vendor/bin/pm-proxy|910437c11108aa66e803bbc760ce3998d141a6b4
