@@ -452,8 +452,8 @@ vendor/lib64/libtinyxml2_1.so|70942325afdd14eedcf11b3fbbfbc3d98f42f8dc
 vendor/lib/hw/vulkan.adreno.so|6df3aa5c6badc46bc7a0367b9a62b0ab5b406159
 vendor/lib64/hw/vulkan.adreno.so|f0cf8bccfcfd0473a2c0322b1274dc4d752f2abb
 
-# Graphics firmware - from daisy V11.0.21.0.QDLMIXM
-vendor/firmware/a530_pfp.fw|c19e1905c15622d7bb02409e6748959bceda9b08
+# Graphics firmware - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
+vendor/firmware/a530_pfp.fw|35b72dce880191ff087af2524205afce40ea8c97
 
 # Graphics firmware
 vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
