@@ -355,8 +355,8 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e157937
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|ccdb6027a199d5549fc92de8ce2ddb006b4b486d
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|f6b0e0e951394b609f0cb5c19e83a37447d9d292
 
-# Gatekeeper - from LA.UM.9.6.2.r1-04100-89xx.0
-vendor/lib64/hw/gatekeeper.msm8937.so:vendor/lib64/hw/gatekeeper.msm8998.so|2063a807fd2ab5eaeea15f602f7b20544d789a1c
+# Gatekeeper - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
+vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8998.so|d760257a98254b9e87ae258e267b1a45a0ed7ecb|58063798ec6d09925915f45f08985def09e08121
 
 # GNSS - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
 vendor/bin/loc_launcher|923d85bd727fb809b43fa86adbf739dd2b55285c
@@ -476,8 +476,8 @@ vendor/firmware/ipa_fws.mdt|7b199ae4c5419e59b0ebfff1b83674f7931d6061
 # IRQ balance
 vendor/bin/msm_irqbalance|117d7c8a8f6f12b3615ec8ab676231df93d277f1
 
-# Keystore - from LA.UM.9.6.2.r1-04100-89xx.0
-vendor/lib64/hw/keystore.msm8937.so:vendor/lib64/hw/keystore.msm8998.so|4e4fea432ecafa65cda2d364b7b4e23e3f84ca08
+# Keystore - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
+vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8998.so|83a48633d4530c45e36cfb9cd7f3d63a8a5bc122|2f6980a247daa3038e2d5fc66b09debeea1833e1
 
 # Media
 -vendor/lib/libgpustats.so|138dce3b7ac0c5c080acb122f2dfd1a70037d9aa
