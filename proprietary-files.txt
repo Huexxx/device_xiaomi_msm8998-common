@@ -496,8 +496,8 @@ lib/libOmxMux.so|033f86f26c34c4ec715ee65b1a2cfbef467a1e61
 lib64/libFileMux.so|901bdfe106d04863e3abfa36e1b6a366ccfe4246
 lib64/libOmxMux.so|fd74e3f31264f45911e79e45c29a8a438e303f74
 
-# NFC firmware
-vendor/lib/libpn553_fw.so|c0b53ec8b330cd2c077b2bea6a7d5284151ec513
+# NFC firmware - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
+vendor/lib/libpn553_fw.so|a7e6076f426314c0186af4c256868959ee636d5d
 
 # PD - from LA.UM.9.2.r1-03500-SDMxx0.0
 vendor/bin/pd-mapper|8eb9717d2ee4da59c64ec89a85bf4e384663322b
