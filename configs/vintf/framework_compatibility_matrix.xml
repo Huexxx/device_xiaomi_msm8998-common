@@ -53,17 +53,6 @@
         <interface>
             <name>IDrmFactory</name>
             <instance>clearkey</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.drm</name>
-        <version>1.0-4</version>
-        <interface>
-            <name>ICryptoFactory</name>
-            <instance>widevine</instance>
-        </interface>
-        <interface>
-            <name>IDrmFactory</name>
             <instance>widevine</instance>
         </interface>
     </hal>

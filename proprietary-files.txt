@@ -341,13 +341,11 @@ vendor/lib64/libssd.so|5b9ac8a457118b1e1b80f87fdc0e78d916ee099a
 vendor/lib64/libops.so|3c763226ccc3b0f32e131af71a458b41bf2b3d8d
 vendor/lib64/libspl.so|f8bbe0322ce06a545f5dc79c888183ac61673b68
 
-# DRM (Widevine) - from Fairphone/FP3/FP3:13/6.A.023.1/gms-497e9bef:user/release-keys
-vendor/bin/hw/android.hardware.drm@1.3-service.widevine|ba2ece25131db91901f3adc9b928edb08c181bf9
-vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|a9ce64f68c86725c06c1b1429e90b04ff96ebf60
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
-vendor/lib/libwvhidl.so|5e4b244a261b811823d66eeeb6cb102700f351e2
-vendor/lib/libwvhidl@1.3.so|0b0205ba44abdf8f24e28d9a46e2fdeaddbc7fb1
-vendor/lib64/libwvhidl.so|f16af38ac55b6df46614df0698ead5a4d2230d65
+# DRM (Widevine) - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
+vendor/bin/hw/android.hardware.drm-service.widevine|cdbd2b11c53df4c9151317d9990914d6fe6e526c
+vendor/etc/init/android.hardware.drm-service.widevine.rc|54c79ef531c9c135fa234a8515b3d37f0e1ccc4d
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml|7e13b6628572b1cdd76351b744e2805d4e6f2dd9
+vendor/lib/libwvaidl.so|eb2d7348cfd83a663e0536436b86a9574ec4d925
 
 # DRM (TUI) - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
 system_ext/lib/vendor.qti.hardware.tui_comm@1.0.so|066cee9ea342a677e91e0c112c7989a1a3ff66f1
