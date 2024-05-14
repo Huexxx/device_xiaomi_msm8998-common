@@ -376,7 +376,8 @@ include $(LOCAL_PATH)/system_prop_o.mk
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 # QMI
 $(call inherit-product, external/json-c/Android.configure.mk)
