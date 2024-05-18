@@ -46,7 +46,7 @@ media.settings.xml                                            u:object_r:media_s
 # Mwqem
 persist.vendor.mwqem.                                         u:object_r:vendor_mwqem_prop:s0
 
-# Power
+# Power HAL
 vendor.powerhal.                                              u:object_r:vendor_power_prop:s0
 
 # Radio

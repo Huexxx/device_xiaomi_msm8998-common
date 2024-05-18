@@ -19,11 +19,11 @@ type media_settings_xml_prop, property_type;
 # Mwqem property
 vendor_restricted_prop(vendor_mwqem_prop);
 
+# Power HAL
+vendor_public_prop(vendor_power_prop);
+
 # Recovery
 type recovery_prop, property_type;
-
-# Power
-vendor_internal_prop(vendor_power_prop)
 
 # Sensors
 type sensors_panel_prop, property_type;

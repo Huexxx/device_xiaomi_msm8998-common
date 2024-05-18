@@ -11,14 +11,6 @@ type fingerprint_sysfs, sysfs_type, fs_type;
 # Netmgr
 type netmgr_data_file, file_type, data_file_type;
 
-# Power
-type proc_sysctl_schedboost, proc_type, fs_type;
-type sysfs_rpm, sysfs_type, fs_type;
-type sysfs_system_sleep_stats, sysfs_type, fs_type;
-
-# Subsystem
-type sysfs_msm_subsys, sysfs_type, fs_type;
-
 # Sweep2sleep
 type sysfs_sts, sysfs_type, fs_type;
 
