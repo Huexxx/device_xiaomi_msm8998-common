@@ -1,3 +1,5 @@
+allow hal_audio_default init:binder { call };
+
 allow hal_audio_default default_android_vndservice:service_manager { add find };
 allow hal_audio_default diag_device:chr_file rw_file_perms;
 allow hal_audio_default sysfs:dir r_dir_perms;
