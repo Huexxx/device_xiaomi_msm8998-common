@@ -180,6 +180,10 @@ PRODUCT_PACKAGES += \
     libmemunreachable.vendor_32 \
     libshmemcompat.vendor
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Display
 PRODUCT_PACKAGES += \
     gralloc.msm8998 \
