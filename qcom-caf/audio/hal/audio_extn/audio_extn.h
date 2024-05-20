@@ -119,6 +119,10 @@ int audio_extn_parse_compress_metadata(struct stream_out *out,
 
 #define AUDIO_PARAMETER_KEY_HIFI_AUDIO_FILTER "hifi_filter"
 
+#ifndef MIXER_PATH_MAX_LENGTH
+#define MIXER_PATH_MAX_LENGTH 100
+#endif
+
 struct snd_card_split {
     char device[HW_INFO_ARRAY_MAX_SIZE];
     char snd_card[HW_INFO_ARRAY_MAX_SIZE];
@@ -806,7 +810,7 @@ void audio_extn_utils_send_audio_calibration(struct audio_device *adev,
 void audio_extn_utils_update_stream_app_type_cfg_for_usecase(
                                   struct audio_device *adev,
                                   struct audio_usecase *usecase);
-bool audio_extn_utils_resolve_config_file(char[]);
+bool audio_extn_utils_resolve_config_file(char[MIXER_PATH_MAX_LENGTH]);
 int audio_extn_utils_get_platform_info(const char* snd_card_name,
                                        char* platform_info_file);
 int audio_extn_utils_get_snd_card_num();
