@@ -324,7 +324,7 @@ const uint32_t format_to_bitwidth_table[AUDIO_MAX_PCM_FORMATS] = {
     [AUDIO_FORMAT_PCM_24_BIT_PACKED] = sizeof(uint8_t) * 3,
 };
 
-const char * const use_case_table[AUDIO_USECASE_MAX] = {
+static const char * const use_case_table[AUDIO_USECASE_MAX] = {
     [USECASE_AUDIO_PLAYBACK_DEEP_BUFFER] = "deep-buffer-playback",
     [USECASE_AUDIO_PLAYBACK_LOW_LATENCY] = "low-latency-playback",
     [USECASE_AUDIO_PLAYBACK_WITH_HAPTICS] = "audio-with-haptics-playback",
