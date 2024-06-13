@@ -166,13 +166,14 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0 \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.common@1.0 \
-    android.hardware.camera.device@3.5 \
-    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.device@3.5:64 \
+    android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
-    android.hardware.camera.provider@2.6
+    android.hardware.camera.provider@2.6:64 \
+    libpng.vendor:32
 
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.camera.device@1.0
+    vendor.qti.hardware.camera.device@1.0:64
 
 PRODUCT_PACKAGES += \
     libmedia_omx.vendor_32 \
@@ -264,6 +265,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
+    libhidlmemory.vendor:64 \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -272,7 +274,8 @@ PRODUCT_PACKAGES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    ims_ext_common.xml
+    ims_ext_common.xml \
+    libion.vendor
 
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor
@@ -416,8 +419,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.2.vendor \
+    libnetutils.vendor \
     libprotobuf-cpp-full \
-    librmnetctl
+    librmnetctl \
+    libsqlite.vendor:64
 
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.1-service.wrapper.xiaomi_msm8998 \
@@ -437,7 +442,8 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl-xiaomi:64 \
-    android.hardware.sensors@1.0-service
+    android.hardware.sensors@1.0-service \
+    libpower.vendor
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
