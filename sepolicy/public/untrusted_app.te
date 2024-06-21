@@ -1,4 +1,4 @@
-allow untrusted_app media_rw_data_file:file { relabelfrom };
+allow untrusted_app media_rw_data_file:file { relabelfrom relabelto };
 
 # KernelSU
 allow untrusted_app selinuxfs:file { read open };
