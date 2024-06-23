@@ -22,6 +22,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Keep this after including updatable_apex.mk
 PRODUCT_COMPRESSED_APEX := false
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # Overlay
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
