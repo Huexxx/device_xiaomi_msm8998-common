@@ -84,22 +84,20 @@ on init
 
     # Setup permission for powerHAL
     chown system system /dev/stune/top-app/schedtune.boost
-
+    chown system system /dev/cpu_dma_latency
     chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
     chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-
     chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
-
     chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
     chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
     chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
     chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/min_freq
 
+    chmod 0664 /dev/stune/top-app/schedtune.boost
+    chmod 0664 /dev/cpu_dma_latency
     chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
     chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-
     chmod 0664 /sys/class/devfreq/soc:qcom,gpubw/min_freq
-
     chmod 0664 /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
     chmod 0664 /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
     chmod 0664 /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
@@ -116,10 +114,6 @@ on init
 
     # Enable thermal and BCL hotplug
     write /sys/module/msm_thermal/core_control/enabled 1
-
-    # Enable input boost configuration
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
     # Disable retention
     write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N
@@ -182,6 +176,10 @@ on post-fs
     wait_for_prop vendor.sys.listeners.registered true
 
 on property:sys.boot_completed=1
+    # Set runtime stune value
+    write /dev/stune/schedtune.prefer_idle 0
+    write /dev/stune/schedtune.boost 0
+
     # Enable UFS powersaving
     write /sys/devices/soc/1da4000.ufshc/clkgate_enable 1
     write /sys/module/lpm_levels/parameters/sleep_disabled N
@@ -197,7 +195,10 @@ on property:sys.boot_completed=1
     # Post-boot fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sde/queue/iostats 0
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sde/queue/read_ahead_kb 128
 
+    # Setup final cpuset
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-3,6-7
     write /dev/cpuset/background/cpus 0-1
