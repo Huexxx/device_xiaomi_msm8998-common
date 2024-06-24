@@ -116,7 +116,6 @@ vendor.display.disable_rotator_downscale=1
 vendor.display.disable_scaler=1
 vendor.display.disable_skip_validate=1
 vendor.display.enable_default_color_mode=1
-vendor.display.perf_hint_window=50
 vendor.display.support_writeback=0
 vendor.gralloc.enable_fb_ubwc=1
 
@@ -135,7 +134,6 @@ vendor.vidc.enc.disable.pq=true
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=0
-ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
