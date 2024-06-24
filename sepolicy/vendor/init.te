@@ -1,6 +1,4 @@
 allow init dnsmasq_exec:file { getattr };
-allow init hal_perf_default:binder { call };
-allow init hal_perf_hwservice:hwservice_manager { find };
 allow init hal_power_service:service_manager { add };
 allow init hwservicemanager:binder { call };
 allow init init:socket { create };
