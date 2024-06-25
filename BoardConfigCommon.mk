@@ -65,6 +65,9 @@ BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
 
+# A/B
+AB_OTA_UPDATER := false
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
