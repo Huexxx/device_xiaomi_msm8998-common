@@ -470,7 +470,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.1-service.msm8998
+    vendor.qti.hardware.vibrator.service
 
 # VNDK
 PRODUCT_PACKAGES += \
