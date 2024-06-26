@@ -1,29 +1,29 @@
-# cnss-daemon
+# Cnss-daemon
 type cnss_prop, property_type;
-
-# Fingerprint
-type vendor_fp_prop, property_type;
-
-# Sensors
-type sensors_panel_prop, property_type;
-
-# Thermal engine
-type thermal_prop, property_type;
 
 # Dirac
 type dirac_prop, property_type;
 
-# mwqem property
-vendor_restricted_prop(vendor_mwqem_prop);
-
-# Media_settings_xml
-type media_settings_xml_prop, property_type;
-
-# Recovery
-type recovery_prop, property_type;
+# Fingerprint
+type vendor_fp_prop, property_type;
 
 # Gnss
 type gnss_prop, property_type;
 
 # Iorap
 type iorap_prop, property_type;
+
+# Media_settings_xml
+type media_settings_xml_prop, property_type;
+
+# Mwqem property
+vendor_restricted_prop(vendor_mwqem_prop);
+
+# Recovery
+type recovery_prop, property_type;
+
+# Sensors
+type sensors_panel_prop, property_type;
+
+# Thermal engine
+type thermal_prop, property_type;
