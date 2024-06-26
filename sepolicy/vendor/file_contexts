@@ -1,51 +1,51 @@
+# FastCharge
+/sys/kernel/fast_charge/force_fast_charge                     u:object_r:sysfs_fastcharge:s0
+
 # Fingerprint
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
-/dev/goodix_fp                                                u:object_r:fingerprint_device:s0
 /data/misc/gf_data(/.*)?                                      u:object_r:fingerprintd_data_file:s0
 /data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_vendor_data_file:s0
 /data/vendor/goodix(/.*)?                                     u:object_r:fingerprint_vendor_data_file:s0
+/dev/goodix_fp                                                u:object_r:fingerprint_device:s0
 /(mnt/vendor)/persist/fpc(/.*)?                               u:object_r:fingerprint_persist_file:s0
 /sys/devices/soc/soc:fingerprint_fpc(/.*)?                    u:object_r:fingerprint_sysfs:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 
-# HVDCP
+# Hvdcp
 /sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[a-z0-9]+-parallel-slave@[0-9]+/power_supply/parallel(/.*)? u:object_r:sysfs_usb_supply:s0
+
+# Ipa
+/vendor/bin/init\.qcom\.ipastart\.sh                          u:object_r:init-qcom-ipastart-sh_exec:s0
+
+# Kcal
+/sys/devices/platform/kcal_ctrl.0(/.*)?                       u:object_r:sysfs_kcal:s0
 
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.xiaomi u:object_r:hal_light_default_exec:s0
+
+# Mutualex service
+/(vendor|system/vendor)/bin/mutualex                          u:object_r:mutualex_exec:s0
+
+# Ril
+/(vendor|system/vendor)/bin/hw/android\.hardware\.radio\.config@1\.1-service\.wrapper\.xiaomi_msm8998 u:object_r:hal_radio_config_default_exec:s0
 
 # Root extra symlink
 /bt_firmware                                                  u:object_r:bt_firmware_file:s0
 /persist                                                      u:object_r:mnt_vendor_file:s0
 
 # Sensors
-/(vendor|system/vendor)/bin/init\.panel_info\.sh              u:object_r:qti_init_shell_exec:s0
 /(mnt/vendor)/persist/PRSensorData\.txt                       u:object_r:sensors_persist_file:s0
+/(vendor|system/vendor)/bin/init\.panel_info\.sh              u:object_r:qti_init_shell_exec:s0
 
 # Sweep2sleep
 /sys/sweep2sleep/sweep2sleep                                  u:object_r:sysfs_sts:s0
 /sys/sweep2sleep/vib_strength                                 u:object_r:sysfs_sts:s0
 
-# Kcal
-/sys/devices/platform/kcal_ctrl.0(/.*)?                       u:object_r:sysfs_kcal:s0
-
-# FastCharge
-/sys/kernel/fast_charge/force_fast_charge                     u:object_r:sysfs_fastcharge:s0
-
 # Thermal engine
 /data/decrypt\.txt                                            u:object_r:thermal_decrypt_file:s0
 /data/vendor/thermal(/.*)?                                    u:object_r:thermal_data_file:s0
 
-# UFS
-/sys/devices/soc/1da4000.ufshc(/.*)?                         u:object_r:sysfs_ufs:s0
+# Ufs
+/sys/devices/soc/1da4000.ufshc(/.*)?                          u:object_r:sysfs_ufs:s0
 
 # WiFi
 /vendor/bin/wifi-mac-generator                                u:object_r:wifi-mac-generator_exec:s0
-
-# Mutualex service
-/(vendor|system/vendor)/bin/mutualex                          u:object_r:mutualex_exec:s0
-
-# IPA
-/vendor/bin/init\.qcom\.ipastart\.sh                          u:object_r:init-qcom-ipastart-sh_exec:s0
-
-# RIL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.radio\.config@1\.1-service\.wrapper\.xiaomi_msm8998 u:object_r:hal_radio_config_default_exec:s0

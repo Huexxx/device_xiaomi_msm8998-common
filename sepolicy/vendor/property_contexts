@@ -19,8 +19,11 @@ ubwc.no.compression                                           u:object_r:camera_
 vidc.enc.dcvs.extra-buff-count                                u:object_r:camera_prop:s0
 video.disable.ubwc                                            u:object_r:camera_prop:s0
 
-# cnss-daemon
+# Cnss-daemon
 persist.vendor.wigig.npt.enable                               u:object_r:cnss_prop:s0
+
+# Dirac
+persist.audio.dirac.                                          u:object_r:dirac_prop:s0
 
 # Fingerprint
 fpc_kpi                                                       u:object_r:vendor_fp_prop:s0
@@ -28,8 +31,20 @@ gf.debug.                                                     u:object_r:vendor_
 persist.vendor.sys.fp.                                        u:object_r:vendor_fp_prop:s0
 ro.boot.fpsensor                                              u:object_r:vendor_fp_prop:s0
 
+# Gnss
+persist.backup.ntpServer                                      u:object_r:gnss_prop:s0
+
+# Iorap
+ro.iorapd.enable                                              u:object_r:iorap_prop:s0
+
 # Iwlan
 persist.vendor.iwlan.logging.logcat                           u:object_r:vendor_cnd_vendor_prop:s0
+
+# Media
+media.settings.xml                                            u:object_r:media_settings_xml_prop:s0
+
+# Mwqem
+persist.vendor.mwqem.                                         u:object_r:vendor_mwqem_prop:s0
 
 # Radio
 persist.sys.labtest_flag                                      u:object_r:telephony_status_prop:s0
@@ -39,14 +54,11 @@ ro.miui.                                                      u:object_r:telepho
 ro.product.mod_device                                         u:object_r:telephony_status_prop:s0
 ril.fake_bs_flag0                                             u:object_r:vendor_radio_prop:s0
 ril.fake_bs_flag1                                             u:object_r:vendor_radio_prop:s0
-#persist.vendor.data.shs_ko_load                               u:object_r:vendor_radio_prop:s0
-#persist.vendor.data.shsusr_load                               u:object_r:vendor_radio_prop:s0
-#persist.vendor.data.perf_ko_load                              u:object_r:vendor_radio_prop:s0
-#persist.vendor.data.qmipriod_load                             u:object_r:vendor_radio_prop:s0
 
 # Recovery
 ro.build.expect.firmware                                      u:object_r:exported_default_prop:s0
 ro.build.expect.trustzone                                     u:object_r:exported_default_prop:s0
+ro.recovery.                                                  u:object_r:recovery_prop:s0
 
 # Sensors
 persist.sys.sensors.                                          u:object_r:vendor_sensors_prop:s0
@@ -57,27 +69,9 @@ sys.panel.                                                    u:object_r:sensors
 persist.sys.thermal.                                          u:object_r:thermal_prop:s0
 sys.thermal.                                                  u:object_r:thermal_prop:s0
 
-# Dirac
-persist.audio.dirac.                                          u:object_r:dirac_prop:s0
-
 # vendor_default_prop
 # default_prop isn't accessible from vendor components.
 # So vendor_default_prop should be marked.
 gpu.stats.debug.level                                         u:object_r:vendor_default_prop:s0
-sdm.                                                          u:object_r:vendor_default_prop:s0
 ro.hwversion                                                  u:object_r:vendor_default_prop:s0
-
-# MWQEM
-persist.vendor.mwqem.                                         u:object_r:vendor_mwqem_prop:s0
-
-# Media
-media.settings.xml                                            u:object_r:media_settings_xml_prop:s0
-
-# Recovery
-ro.recovery.                                                  u:object_r:recovery_prop:s0
-
-# Gnss
-persist.backup.ntpServer                                      u:object_r:gnss_prop:s0
-
-# Iorap
-ro.iorapd.enable                                              u:object_r:iorap_prop:s0
+sdm.                                                          u:object_r:vendor_default_prop:s0
