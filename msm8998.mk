@@ -326,9 +326,6 @@ PRODUCT_COPY_FILES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    libandroid_net
-
-PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor \
     android.system.net.netd@1.1.vendor
 
