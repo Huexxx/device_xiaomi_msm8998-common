@@ -10,7 +10,10 @@
         "1094400"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "CPULittleClusterMinFreq",
@@ -22,7 +25,11 @@
         "1094400",
         "0"
       ],
-      "ResetOnInit": true
+      "DefaultIndex": 4,
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "CPUBigClusterMaxFreq",
@@ -35,7 +42,10 @@
         "1132800"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "CPUBigClusterMinFreq",
@@ -48,7 +58,11 @@
         "1132800",
         "0"
       ],
-      "ResetOnInit": true
+      "DefaultIndex": 5,
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "GPUMaxFreq",
@@ -59,7 +73,11 @@
         "515000000",
         "710000000"
       ],
-      "ResetOnInit": true
+      "DefaultIndex": 3,
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "GPUMinFreq",
@@ -69,7 +87,11 @@
         "414000000",
         "257000000"
       ],
-      "ResetOnInit": true
+      "DefaultIndex": 2,
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "TASchedtuneBoost",
@@ -78,7 +100,11 @@
         "50",
         "10"
       ],
-      "ResetOnInit": true
+      "DefaultIndex": 1,
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "CPUBWHystTriggerCount",
@@ -86,7 +112,12 @@
       "Values": [
         "0",
         "3"
-      ]
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": false,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "CPUBWHistMemory",
@@ -94,7 +125,12 @@
       "Values": [
         "0",
         "20"
-      ]
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": false,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "CPUBWHystLength",
@@ -102,7 +138,12 @@
       "Values": [
         "0",
         "10"
-      ]
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": false,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "CPUBWMinFreq",
@@ -113,7 +154,11 @@
         "1525",
         "762"
       ],
-      "ResetOnInit": true
+      "DefaultIndex": 3,
+      "ResetOnInit": true,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     },
     {
       "Name": "PowerHALMainState",
@@ -122,7 +167,9 @@
         "SUSTAINED_PERFORMANCE",
         ""
       ],
-      "Type": "Property"
+      "Type": "Property",
+      "DefaultIndex": 1,
+      "ResetOnInit": false
     },
     {
       "Name": "PowerHALAudioState",
@@ -131,7 +178,9 @@
         "AUDIO_LOW_LATENCY",
         ""
       ],
-      "Type": "Property"
+      "Type": "Property",
+      "DefaultIndex": 1,
+      "ResetOnInit": false
     },
     {
       "Name": "PowerHALRenderingState",
@@ -140,7 +189,9 @@
         "EXPENSIVE_RENDERING",
         ""
       ],
-      "Type": "Property"
+      "Type": "Property",
+      "DefaultIndex": 1,
+      "ResetOnInit": false
     },
     {
       "Name": "DoubleTapToWakeEnable",
@@ -149,7 +200,11 @@
           "0",
           "1"
       ],
-      "DefaultIndex": 0
+      "DefaultIndex": 0,
+      "ResetOnInit": false,
+      "Truncate": true,
+      "HoldFd": false,
+      "WriteOnly": false
     }
   ],
   "Actions": [
