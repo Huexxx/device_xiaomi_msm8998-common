@@ -1,0 +1,2 @@
+# Settings
+allow system_app privapp_data_file:dir r_dir_perms;
