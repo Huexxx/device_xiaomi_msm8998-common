@@ -1,4 +1,1 @@
 allow isolated_app vendor_default_prop:file { getattr map open };
-
-# com.android.chrome:sandboxed_process
-allow isolated_app app_data_file:file setattr;
