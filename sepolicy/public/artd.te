@@ -1,1 +1,2 @@
 allow artd apk_tmp_file:dir { read };
+allow artd app_data_file:lnk_file { read };
