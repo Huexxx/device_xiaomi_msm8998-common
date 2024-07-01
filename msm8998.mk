@@ -16,6 +16,8 @@
 
 NEED_AIDL_NDK_PLATFORM_BACKEND  := true
 
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
 # Disable APEX compression
