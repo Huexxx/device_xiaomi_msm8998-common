@@ -645,17 +645,6 @@ vendor/lib64/qtibus.so|0b387ecd1b898f3d3aee6c51783817767a6d1e70
 vendor/lib64/qtimutex.so|fc156f485519be1cd683f1af3ebb6194ce4ba2d5
 
 # Radio(IMS) - from LA.UM.9.2.r1-03500-SDMxx0.0
--system_ext/app/imssettings/imssettings.apk|8e27882a4ecd10d69a5774b2834781cc60628a3f
-system_ext/etc/permissions/com.qualcomm.qti.imscmservice.xml|db25ef24f1937366d58a53b4f4b8923bc9e98d2d
--system_ext/framework/qti-telephony-common.jar|0db037785928aae043e9be7f49bddbefad43fbc3
-system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so|edf4941798ce879de80112d3453dba5b541dd9dd
-system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so|2359b4a42b9f009cc574b1b149040fd7751d3bab
-system_ext/lib64/com.qualcomm.qti.imscmservice@2.1.so|e10101f34b09634689aaba2f58521af2e5c8690f
-system_ext/lib64/com.qualcomm.qti.imscmservice@2.2.so|836b776471da79bb0461d06cf6209666d0ff0ea1
-system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so|32e0ee458e6497233aa12dfbcf91b4f8c71b8140
-system_ext/lib64/com.qualcomm.qti.uceservice@2.1.so|11ae7d168f59d2929295f9cf7688a66f78cb264d
-system_ext/lib64/com.qualcomm.qti.uceservice@2.2.so|59d6259c6358d104eea3a3147b891ead93adee73
-system_ext/lib64/com.qualcomm.qti.uceservice@2.3.so|39bb7e183b1e2bb1b1d5887f48a7d08bde960f42
 vendor/bin/imsdatadaemon|701f9a2eaa2674bcaa7e69817bdcb656e99fcac9
 vendor/bin/imsqmidaemon|5fde955e71392479b2f3e6aaf6005fa54b618678
 vendor/bin/imsrcsd|bf29aac14856f29268c01599e5f6c7c6ae520685
