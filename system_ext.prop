@@ -148,6 +148,7 @@ persist.data.df.ul_mode=5
 
 # Radio
 keyguard.no_require_sim=true
+persist.radio.add_power_save=1
 persist.radio.multisim.config=dsds
 persist.rmnet.data.enable=true
 persist.sys.fflag.override.settings_network_and_internet_v2=true
