@@ -51,12 +51,13 @@ vendor.powerhal.                                              u:object_r:vendor_
 
 # Radio
 persist.sys.labtest_flag                                      u:object_r:telephony_status_prop:s0
+ril.fake_bs_flag0                                             u:object_r:vendor_radio_prop:s0
+ril.fake_bs_flag1                                             u:object_r:vendor_radio_prop:s0
 ro.build.software.version                                     u:object_r:vendor_qcom_ims_prop:s0
 ro.carrier.name                                               u:object_r:telephony_status_prop:s0
 ro.miui.                                                      u:object_r:telephony_status_prop:s0
+ro.mot.eri.losalert.delay                                     u:object_r:telephony_status_prop:s0
 ro.product.mod_device                                         u:object_r:telephony_status_prop:s0
-ril.fake_bs_flag0                                             u:object_r:vendor_radio_prop:s0
-ril.fake_bs_flag1                                             u:object_r:vendor_radio_prop:s0
 
 # Recovery
 ro.build.expect.firmware                                      u:object_r:exported_default_prop:s0

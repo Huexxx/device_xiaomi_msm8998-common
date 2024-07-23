@@ -18,3 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # IORap: Disable iorapd readahead for app starts
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=false
+
+# RIL Powersaving
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.mot.eri.losalert.delay=100
