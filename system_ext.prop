@@ -33,6 +33,7 @@ ro.ril.power_collapse=1
 wifi.supplicant_scan_interval=240
 
 # Camera
+camera.hal1.packagelist=com.whatsapp
 persist.camera.xm.green.b=0.96
 persist.camera.xm.green.r=0.97
 
