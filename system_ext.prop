@@ -96,8 +96,10 @@ persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
 
 # IMS
+persist.dbg.ims_volte_enable=1
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
 
 # Logs
 persist.log.tag.AnalyticsService=S
@@ -149,7 +151,11 @@ persist.data.df.ul_mode=5
 
 # Radio
 keyguard.no_require_sim=true
+persist.radio.calls.on.ims=1
+persist.radio.data_ltd_sys_ind=1
+persist.radio.data_con_rprt=1
 persist.radio.multisim.config=dsds
+persist.radio.rat_on=combine
 persist.rmnet.data.enable=true
 persist.sys.fflag.override.settings_network_and_internet_v2=true
 persist.sys.fflag.override.settings_provider_model=false
