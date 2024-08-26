@@ -281,6 +281,10 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
+    PresencePolling \
+    RcsService
+
+PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
     libion.vendor
