@@ -37,6 +37,11 @@ camera.hal1.packagelist=com.whatsapp
 persist.camera.xm.green.b=0.96
 persist.camera.xm.green.r=0.97
 
+# Data
+persist.data.iwlan=1
+persist.data.iwlan.enable=true
+persist.data.iwlan.ipsec.ap=1
+
 # Dirac
 audio.dirac.logging=0
 ro.audio.soundfx.dirac=true
@@ -151,12 +156,15 @@ persist.data.df.ul_mode=5
 
 # Radio
 keyguard.no_require_sim=true
+persist.radio.VT_ENABLE=1
 persist.radio.calls.on.ims=1
 persist.radio.data_ltd_sys_ind=1
 persist.radio.data_con_rprt=1
 persist.radio.multisim.config=dsds
 persist.radio.rat_on=combine
+persist.radio.volte.dan_support=true
 persist.rmnet.data.enable=true
+persist.sys.cust.lte_config=true
 persist.sys.fflag.override.settings_network_and_internet_v2=true
 persist.sys.fflag.override.settings_provider_model=false
 persist.vendor.ims.disableADBLogs=1
