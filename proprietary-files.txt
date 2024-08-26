@@ -725,6 +725,15 @@ vendor/lib64/libsensor_reg.so|cee932c0b89e7d4e3dd7135c7645a5076eadb8dc
 vendor/lib64/libsns_low_lat_stream_stub.so|326637595214dd00c8ed09b57eeee11988269a86
 vendor/lib64/sensors.ssc.so|449a7a5db27d95c1b8c9090db619adb57f39570b
 
+# Trusted Execution Environment connector - from Fairphone/FP3/FP3:13/6.A.028.1/gms-fb581341:user/release-keys
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|a12cd8a3d326609ee0f0a0cdb5cfc69bd2085f1e
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|c966350ee67d3a7c73ca7184e3725264025d16f5
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|5c9a5ec3341030b58d88441efaddaa7843dd6641
+vendor/lib64/libGPQTEEC_vendor.so|bc884615f468508bd7f7fec793414d9fde58f0d0
+vendor/lib64/libGPTEE_vendor.so|527c8393ef416a9ddca4337fb4b5a1618551de44
+vendor/lib64/libQTEEConnector_vendor.so|22c4dfe5813f6f923a30ad9470227a65a217ab4a
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|0f684ab4d6f4b76b248b1da6e747ff2454c68d8c
+
 # Thermal
 vendor/bin/thermal-engine|d85976f8da5f1b468119ea8b81de9a45c87413ad
 vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
