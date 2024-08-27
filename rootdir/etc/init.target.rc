@@ -142,9 +142,6 @@ on fs
     mkdir /mnt/vendor/persist/wlan_bt 0770 system system
 
 on late-fs
-    # Wait for keymaster
-    exec_start wait_for_keymaster
-
     # Mount RW partitions which need run fsck
     mount_all /system/vendor/etc/fstab.qcom --late
 
