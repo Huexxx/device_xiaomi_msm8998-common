@@ -104,10 +104,8 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 ro.crypto.volume.options=::v1
 
 # Data
-ro.vendor.use_data_netmgrd=true
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
-persist.vendor.data.profile_update=true
 
 # Display
 vendor.display.disable_metadata_dynamic_fps=1
@@ -120,10 +118,19 @@ vendor.display.support_writeback=0
 vendor.gralloc.enable_fb_ubwc=1
 
 # DPM
-persist.vendor.mwqem.enable=1
+persist.vendor.dpm.feature=1
+persist.vendor.dpm.loglevel=0
+persist.vendor.dpm.nsrm.bkg.evt=3955
+persist.vendor.dpmhalservice.enable=1
 
 # HEH filename encryption is being dropped
 ro.crypto.volume.filenames_mode=aes-256-cts
+
+# IMS (logging, disabled atm)
+### persist.vendor.ims.disableADBLogs=1
+### persist.vendor.ims.disableDebugLogs=1
+### persist.vendor.ims.disableIMSLogs=1
+### persist.vendor.ims.disableQXDMLogs=1
 
 # Media
 debug.stagefright.omx_default_rank=0
@@ -137,19 +144,21 @@ ro.vendor.qti.core_ctl_min_cpu=0
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
-ro.vendor.qti.va_odm.support=1
 
 # Radio
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.data_ltd_sys_ind=1
+persist.vendor.radio.dynamic_sar=1
 persist.vendor.radio.enableadvancedscan=false
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.force_on_dc=true
+persist.vendor.radio.manual_nw_rej_ct=1
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.report_codec=1
 persist.vendor.radio.sib16_support=1
-telephony.lteOnCdmaDevice=1
 vendor.rild.libpath="/vendor/lib64/libril-qc-hal-qmi.so"
-vendor.service.qti.ims.enabled=1
 vendor.voice.path.for.pcm.voip=true
 
 # Sensors
