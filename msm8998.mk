@@ -464,14 +464,16 @@ QCOM_SOONG_NAMESPACE := \
 PRODUCT_PACKAGES += \
     extphonelib \
     extphonelib.xml \
-    telephony-ext \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
-    qti_telephony_utils.xml
+    qti_telephony_utils.xml \
+    telephony-ext \
+    xiaomi-telephony-stub
 
 PRODUCT_BOOT_JARS += \
-    telephony-ext
+    telephony-ext \
+    xiaomi-telephony-stub
 
 # USB
 PRODUCT_PACKAGES += \
