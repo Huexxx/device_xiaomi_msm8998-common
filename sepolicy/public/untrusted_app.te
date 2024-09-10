@@ -4,3 +4,9 @@ allow untrusted_app media_rw_data_file:file { relabelfrom relabelto };
 allow untrusted_app selinuxfs:file { read open };
 allow untrusted_app shell_test_data_file:dir { search };
 allow untrusted_app postinstall_mnt_dir:dir { getattr };
+
+dontaudit untrusted_app proc:file { read };
+dontaudit untrusted_app proc_tty_drivers:file { read };
+dontaudit untrusted_app qemu_hw_prop:file { read };
+dontaudit untrusted_app qemu_sf_lcd_density_prop:file { read };
+dontaudit untrusted_app serialno_prop:file { read };
