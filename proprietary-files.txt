@@ -560,12 +560,6 @@ lib64/libOmxMux.so|fd74e3f31264f45911e79e45c29a8a438e303f74
 # NFC firmware - from Fairphone/FP3/FP3:13/6.A.030.0/gms-d57debf7:user/release-keys
 vendor/lib/libpn553_fw.so|a7e6076f426314c0186af4c256868959ee636d5d
 
-# PD - from LA.UM.9.2.r1-03500-SDMxx0.0
-vendor/bin/pd-mapper|8eb9717d2ee4da59c64ec89a85bf4e384663322b
-
-# PD - from Fairphone/FP3/FP3:13/6.A.030.0/gms-d57debf7:user/release-keys
-vendor/lib64/libpdmapper.so|859a6acc25bf64a0503f333e960bf99d322f9f7e
-
 # Peripheral manager - from Fairphone/FP3/FP3:13/6.A.030.0/gms-d57debf7:user/release-keys
 vendor/bin/pm-proxy|910437c11108aa66e803bbc760ce3998d141a6b4
 vendor/bin/pm-service|98827a6bf6693033a7c767e3fb4f097b9075a0ef
@@ -581,49 +575,49 @@ vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|3ff445db2dd2db1a1068fe70a54a6c
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so|58dd8c5877ba3a274f43f63e6f033213dd84e1c4
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so|01b1d11316f5dcd8c1012a55ff01399081c79940
 
-# QMI - from Fairphone/FP3/FP3:13/6.A.030.0/gms-d57debf7:user/release-keys
+# QMI - from Redmi Note 10 (codenamed `mojito`) MIUI V14.0.9.0.SKGMIXM
+system_ext/etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
+-vendor/bin/irsc_util|121deb2d6fd21b122c6a8ca8b30ef167f6b90f61
+-vendor/bin/pd-mapper|434bc20c03f8f34bfa8fa3879775284505b8d39a
+-vendor/bin/qrtr-cfg|9019f1c99cb23913f540433285af0d26c397c121
+-vendor/bin/qrtr-lookup|fb31961d7c966f09e5c77a2be17aa8af702fe90b
+-vendor/bin/qrtr-ns|2b84b77bcd50e8c65c2151457f885eb434af4585
+-vendor/lib/libdiag.so|65e7607778bc164619a353f11f64957b60fdc22c
+-vendor/lib/libdsutils.so|6a1bc9529fa8b53488e73fe3a191b40056261a35
+-vendor/lib/libidl.so|f91eebf917150514da6c111de6c66805bed3f6c8
+-vendor/lib/libmdmdetect.so|0105abde3eead7e5292d1c0823327f0969751e88
+-vendor/lib/libqmi.so|b373072a9016dc3efbcc33fc716a0b453ef0beb6
+-vendor/lib/libqmi_cci.so|9b58cbf1061250e917534ff94105c8d8c8d467df
+-vendor/lib/libqmi_client_helper.so|1fbb98bb3c1d8dbe6675ce21c1b4ff75e6b9c12a
+-vendor/lib/libqmi_client_qmux.so|7aaabf55c5207922b7a94223d8221da77867f031
+-vendor/lib/libqmi_common_so.so|ff25aa6185ebf0700fd5c7d913f383bcd09ea866
+-vendor/lib/libqmi_csi.so|73749863f412035d1822f58f177ea27b0810387d
+-vendor/lib/libqmi_csvt_srvc.so|4f7890a0f6c80436341e639a3179b78495594612
+-vendor/lib/libqmi_encdec.so|d8642bf7e8193db310dafad8116222f3b3d9013a
+-vendor/lib/libqmi_legacy.so|7805ed3a940405d88d4b7dd29516c68ee19c5b08
+-vendor/lib/libqmiservices.so|1c5742cd12b1eb2ee42369d27a542a8fb36b38a8
+-vendor/lib64/libdiag.so|dc158f53de3fadeb8760eea0f4eaac45ff11c121
+-vendor/lib64/libdsutils.so|168d827a6e5eea94587aa251e631848aa04f5304
+-vendor/lib64/libidl.so|857f7a75a51ade7d3621f7fa6da0e9461244ca01
+-vendor/lib64/libmdmdetect.so|4dee2a700aad658f3f30a6da069c867307ed371c
+-vendor/lib64/libpdmapper.so|1e81774d6ad57b7ee73ba5b47eb9a31faf43a06d
+-vendor/lib64/libqmi.so|111d46afba28c1876ccbd96db36ac109a45d9088
+-vendor/lib64/libqmi_cci.so|3a218c40d6c7741cabe0ac236d5b3b00cf192de6
+-vendor/lib64/libqmi_client_helper.so|8955fa915d70dba9ccc49a21328cf25b4e2d0003
+-vendor/lib64/libqmi_client_qmux.so|f3dce2cb014ab958d7b96792dfd0ef29d81a846c
+-vendor/lib64/libqmi_common_so.so|d817b576a054dd91e8e4346d73e6d635d221bfde
+-vendor/lib64/libqmi_csi.so|7e19c2266b7f63f3f9e69c039b1446acd460231b
+-vendor/lib64/libqmi_csvt_srvc.so|f1a3bc5d8e48e8bc3464b6a9ad652a7553240c79
+-vendor/lib64/libqmi_encdec.so|a18bb21e5b9b53e3dc8dc45f6e7e65e32a467607
+-vendor/lib64/libqmi_legacy.so|f324c6701ecf78ff50975c0bc7f99aea09cb3539
+-vendor/lib64/libqmiservices.so|e7302e08cb5bc14756f76924c07a9be0075cfe02
+-vendor/lib64/libqrtr.so|b22ee7df87b35ba88b518f0b821cc601cd612183
+-vendor/lib64/libqsocket.so|3fa01c9aff6ed96a5ea9886c7696a046c929e339
+
+# QTI permissions - from Fairphone/FP3/FP3:13/6.A.030.0/gms-d57debf7:user/release-keys
 etc/sysconfig/qti_whitelist.xml|9b26e5e671f5378bbb8b663e12ba1f900795b9c9
 system_ext/etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
-system_ext/etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
-system_ext/lib/libqmi_cci_system.so|bf7eb027f126beeaac840218e9cd29baf92a1879
-system_ext/lib64/libqmi_cci_system.so|d5d1800079d6f5b88748732c5df3170f2e53167d
-vendor/bin/irsc_util|e590882aefe9da28c1d57e9bf46962198f1dabcd
-vendor/bin/qrtr-lookup|196863b08aa01b1f19632ac2687245e83002c98d
-vendor/bin/qrtr-ns|f34e89ba7d2ed5c0fe623a681bfc9b6b742cb3c1
 vendor/etc/seccomp_policy/qti-systemd.policy|40bf52fb50a94eb8325beefe1927d9ba155fb02a
-vendor/lib/libdiag.so|0a9a6aa74b1728bfb9c6b3ccd7cf0a5bdbc29434
-vendor/lib/libdsutils.so|60135d6d64ecba72fa0eb637a434578290beaaff
-vendor/lib/libidl.so|dc8d161c035f70e7e6c55461b0238fbe916c5a7d
-vendor/lib/libmdmdetect.so|a2df5e8eba8bd275de62bbb7c0f6af1c78fbc7a0
-vendor/lib/libqcci_legacy.so|fa7f0fe72c0246633d842891bb0187867930f63b
-vendor/lib/libqmi.so|08e30ffe119992357de2e8f02b2cd3ea1fed6a50
--vendor/lib/libqmi_cci.so|6b8aae60c097ef8ae18f2497ed803bfdbab4e252
-vendor/lib/libqmi_client_helper.so|8e8184cccc95e0d8b3b95677e69332d5453ac773
-vendor/lib/libqmi_client_qmux.so|c2d7ec0886ff49d14f0b93fd91edb77130311fe4
--vendor/lib/libqmi_common_so.so|487dab3792cd55351cdaf0a0d0e5fb974860f992
-vendor/lib/libqmi_csi.so|90930481c581a6b319bd87b6799b8e0ee882e52c
-vendor/lib/libqmi_encdec.so|e45cfc088efc2141047d304c9577f466bdb5dfbc
-vendor/lib/libqmi_legacy.so|c1d45f9d7e13dba120bf4384953039ee5b95a5b2
-vendor/lib/libqmiservices.so|52244e9d54c4d352d148d276044a4b7cc4c78bf4
-vendor/lib/libsmemlog.so|6506599ef09e171939a50213184b4143058bb678
-vendor/lib64/libdiag.so|174ff3f940288d2d1503230465dfe917ab9d155b
-vendor/lib64/libdsutils.so|0b466344eb6628feb1b5aba00d1ef3f680e5aa9a
-vendor/lib64/libidl.so|79ebe1a5b1fb81d9cdc972c71cec2667cdcf6599
-vendor/lib64/libmdmdetect.so|1acafe6bd37e770d97649b703d2b695d790d2191
-vendor/lib64/libqcci_legacy.so|d4643c6a585a62d9249acc841a4137c097299e4c
-vendor/lib64/libqcrildatactl.so|b3dccb609cfdc64b7bc74d9d3204904d8972df4d
-vendor/lib64/libqmi.so|e29aa40904a3b1cf73dd739861154acbbe73ecb3
--vendor/lib64/libqmi_cci.so|821c9ed22945e020e8f855267d53be5f2b619740
-vendor/lib64/libqmi_client_helper.so|b53191b0ff5bd9abadd3751ef2896ef13e9cd8d2
-vendor/lib64/libqmi_client_qmux.so|600fe6c17ae7a5ca01d02bcbbbf7fb2c0510bd41
--vendor/lib64/libqmi_common_so.so|4a162382e0d611dacbb803371e78eb56786078b9
-vendor/lib64/libqmi_csi.so|6d22ed6353c791ea1804c195b92b02dc28a679c3
-vendor/lib64/libqmi_encdec.so|8a365cf7472c187c02fa0649e09fee529ded7563
-vendor/lib64/libqmi_legacy.so|5dc657620cfaa6b13bd37268459c7247bae58770
-vendor/lib64/libqmiservices.so|2e259463cbeb329caec303b642ab4068c8d10be5
-vendor/lib64/libqrtr.so|2e4d6aa5344159c36ccd34cc341ee29d6f0424a1
-vendor/lib64/libqsocket.so|0817c4699f08d2595971f8103776a369bd15580d
-vendor/lib64/libsmemlog.so|1d8db8970125db310267250cc68de5d831c1d2ff
 
 # RIL - from Redmi Note 10 (codenamed `mojito`) MIUI V14.0.9.0.SKGMIXM
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|2c7dbd434839791e7b9bddf9d1c19c8a0939180f
