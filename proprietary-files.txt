@@ -557,8 +557,8 @@ lib/libOmxMux.so|033f86f26c34c4ec715ee65b1a2cfbef467a1e61
 lib64/libFileMux.so|901bdfe106d04863e3abfa36e1b6a366ccfe4246
 lib64/libOmxMux.so|fd74e3f31264f45911e79e45c29a8a438e303f74
 
-# NFC firmware - from Fairphone/FP3/FP3:13/6.A.030.0/gms-d57debf7:user/release-keys
-vendor/lib/libpn553_fw.so|a7e6076f426314c0186af4c256868959ee636d5d
+# NFC firmware - from Redmi Note 12 Pro 4G (codenamed `sweet_k6a`) OS1.0.8.0.THGMIXM
+vendor/lib/libpn553_fw.so|a8e29cc3ebb2e0df0fb505fc2da9c69a015680fb
 
 # Peripheral manager - from Fairphone/FP3/FP3:13/6.A.030.0/gms-d57debf7:user/release-keys
 vendor/bin/pm-proxy|910437c11108aa66e803bbc760ce3998d141a6b4
