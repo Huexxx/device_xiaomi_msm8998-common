@@ -624,6 +624,7 @@ vendor/etc/seccomp_policy/qti-systemd.policy|40bf52fb50a94eb8325beefe1927d9ba155
 # RIL - from Redmi Note 10 (codenamed `mojito`) MIUI V14.0.9.0.SKGMIXM
 system_ext/app/QtiTelephony/QtiTelephony.apk|6bd98f978a98fd89f80d7925928f57594aafa925
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|2c7dbd434839791e7b9bddf9d1c19c8a0939180f
+system_ext/app/atfwd/atfwd.apk|f9697b47f23ac8972a05c17fbdacea413cb4d796
 system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml|4f0056403f56928b8c75a617ba582f17061f89ae
 system_ext/framework/qcrilhook.jar|f251fd8cf621c66a970597954c257d69b6136eda
