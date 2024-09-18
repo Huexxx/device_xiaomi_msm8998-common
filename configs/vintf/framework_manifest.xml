@@ -1,5 +1,4 @@
-<manifest version="2.0" type="framework">
-    <!-- atfwd -->
+<manifest version="4.0" type="framework">
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.atcmdfwd</name>
         <transport>hwbinder</transport>
@@ -8,5 +7,6 @@
             <name>IAtCmdFwd</name>
             <instance>AtCmdFwdService</instance>
         </interface>
+        <fqname>@1.0::IAtCmdFwd/AtCmdFwdService</fqname>
     </hal>
 </manifest>
