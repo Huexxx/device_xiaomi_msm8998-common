@@ -129,14 +129,8 @@ dalvik.vm.heaptargetutilization=0.75
 
 # Radio
 keyguard.no_require_sim=true
-persist.radio.multisim.config=dsds
-ril.subscription.types=RUIM
-ro.telephony.default_cdma_sub=0
-ro.telephony.default_network=22,20
+ril.subscription.types=NV,RUIM
 telephony.lteOnCdmaDevice=1
-
-# RCS
-persist.rcs.supported=1
 
 # System
 persist.sys.binary_xml=false
