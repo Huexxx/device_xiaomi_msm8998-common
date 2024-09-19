@@ -464,8 +464,6 @@ QCOM_SOONG_NAMESPACE := \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    extphonelib \
-    extphonelib.xml \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
