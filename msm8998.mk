@@ -287,8 +287,6 @@ PRODUCT_PACKAGES += \
     RcsService
 
 PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml \
     libion.vendor
 
 PRODUCT_PACKAGES += \
