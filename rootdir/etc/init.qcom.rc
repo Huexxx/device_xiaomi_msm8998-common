@@ -26,7 +26,6 @@
 #
 
 import /system/vendor/etc/init/hw/init.fingerprint.rc
-import /system/vendor/etc/init/hw/init.parts.rc
 import /system/vendor/etc/init/hw/init.qcom.usb.rc
 import /system/vendor/etc/init/hw/init.target.rc
 

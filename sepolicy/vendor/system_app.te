@@ -8,19 +8,6 @@ get_prop(system_app, camera_prop)
 # FastCharge
 allow system_app sysfs_fastcharge:file rwx_file_perms;
 
-# Kcal
-allow system_app sysfs_kcal:file rwx_file_perms;
-allow system_app sysfs_kcal:dir { search };
-
-# Parts
-allow system_app sysfs_leds:dir search;
-allow system_app { sysfs_graphics sysfs_sectouch }:dir search;
-allow system_app sysfs_graphics:file rwx_file_perms;
-allow system_app sysfs_sectouch:file rwx_file_perms;
-
-# Sweep2sleep
-allow system_app sysfs_sts:file rwx_file_perms;
-
 # Wireless charger
 allow system_app hal_wlc_hwservice:hwservice_manager { find };
 
