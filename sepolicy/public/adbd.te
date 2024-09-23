@@ -1,1 +1,2 @@
 allow adbd oemfs:dir { search };
+allow adbd system_data_file:file r_file_perms;
