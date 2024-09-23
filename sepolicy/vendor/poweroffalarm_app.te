@@ -1,1 +1,3 @@
 allow poweroffalarm_app cgroup:file w_file_perms;
+
+get_prop(poweroffalarm_app, vendor_default_prop)
