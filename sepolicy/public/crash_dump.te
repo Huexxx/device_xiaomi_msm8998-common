@@ -1,3 +1,4 @@
+allow crash_dump privapp_data_file:file r_file_perms;
 allow crash_dump resourcecache_data_file:file r_file_perms;
 allow crash_dump vendor_hal_file:file r_file_perms;
 allow crash_dump vendor_overlay_file:file r_file_perms;
