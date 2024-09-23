@@ -1,2 +1,5 @@
 allow system_app proc_pagetypeinfo:file r_file_perms;
 allow system_app proc_vmallocinfo:file r_file_perms;
+
+# Settings
+allow system_app { storaged system_suspend }:binder { call };

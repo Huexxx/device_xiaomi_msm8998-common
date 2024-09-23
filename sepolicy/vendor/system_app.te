@@ -8,6 +8,9 @@ get_prop(system_app, camera_prop)
 # FastCharge
 allow system_app sysfs_fastcharge:file rwx_file_perms;
 
+# Settings
+allow system_app { hal_audio_default hal_health_default hal_power_default hal_vibrator_default hal_wifi_default hal_wifi_supplicant_default netd wificond }:binder { call };
+
 # Wireless charger
 allow system_app hal_wlc_hwservice:hwservice_manager { find };
 
