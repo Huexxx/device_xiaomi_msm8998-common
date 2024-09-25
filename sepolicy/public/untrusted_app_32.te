@@ -1,1 +1,6 @@
 allow untrusted_app_32 media_rw_data_file:file { relabelfrom relabelto };
+
+# AboutBliss
+allow untrusted_app_32 proc_max_map_count:file r_file_perms;
+allow untrusted_app_32 sysfs_zram:dir { search };
+allow untrusted_app_32 sysfs_zram:file { read };
