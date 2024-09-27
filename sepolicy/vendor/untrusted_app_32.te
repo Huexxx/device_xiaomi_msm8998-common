@@ -7,3 +7,7 @@ allow untrusted_app_32 rootfs:dir r_dir_perms;
 
 # Aperture
 get_prop(untrusted_app_32, vendor_default_prop)
+
+# Accubattery
+allow untrusted_app_32 sysfs_battery_supply:dir r_dir_perms;
+allow untrusted_app_32 sysfs_battery_supply:file r_file_perms;
