@@ -39,6 +39,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth.a2dp</name>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothAudioOffload</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="aidl">
         <name>android.hardware.cas</name>
         <version>1</version>
