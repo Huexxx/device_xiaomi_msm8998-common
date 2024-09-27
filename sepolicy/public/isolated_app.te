@@ -1,4 +1,3 @@
 allow isolated_app content_capture_service:service_manager { find };
 
-# com.android.chrome:sandboxed_process
-allow isolated_app app_data_file:file setattr;
+dontaudit isolated_app app_data_file:file setattr;
