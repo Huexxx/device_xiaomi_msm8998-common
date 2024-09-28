@@ -143,3 +143,10 @@ get_prop(gmscore_app, wifi_hal_prop)
 get_prop(gmscore_app, wifi_prop)
 get_prop(gmscore_app, zram_config_prop)
 get_prop(gmscore_app, zram_control_prop)
+
+allow gmscore_app init_exec:lnk_file { getattr };
+allow gmscore_app linkerconfig_file:dir { getattr };
+allow gmscore_app mirror_data_file:dir { getattr };
+allow gmscore_app mnt_vendor_file:lnk_file { getattr };
+allow gmscore_app postinstall_mnt_dir:dir { getattr };
+allow gmscore_app system_dlkm_file:dir { getattr };

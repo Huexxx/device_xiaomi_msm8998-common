@@ -105,3 +105,7 @@ get_prop(gmscore_app, vendor_wlc_prop)
 get_prop(gmscore_app, vendor_xlat_prop)
 
 allow gmscore_app zygote:unix_stream_socket { getopt };
+
+allow gmscore_app adsprpcd_file:dir { getattr };
+allow gmscore_app bt_firmware_file:dir { getattr };
+allow gmscore_app firmware_file:dir { getattr };
