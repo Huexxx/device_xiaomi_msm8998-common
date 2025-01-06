@@ -26,15 +26,3 @@ cc_library_shared {
     ],
     vendor: true,
 }
-
-cc_library_shared {
-    name: "libpiex_shim",
-    srcs: [
-        "lib-piex/lib-piex.cpp",
-    ],
-    vendor: true,
-    shared_libs: [
-        "libpiex",
-        "libutils",
-    ],
-}
