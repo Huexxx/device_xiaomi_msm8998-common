@@ -1,15 +1,15 @@
 /*
- * Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
  * Not a Contribution
  */
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2_0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2_0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,9 +18,9 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.gnss@1.1-service-qti"
+#define LOG_TAG "android.hardware.gnss@2.1-service-qti"
 
-#include <android/hardware/gnss/1.1/IGnss.h>
+#include <android/hardware/gnss/2.1/IGnss.h>
 #include <hidl/LegacySupport.h>
 #include "loc_cfg.h"
 #include "loc_misc_utils.h"
@@ -33,7 +33,7 @@ extern "C" {
 #define DEFAULT_HW_BINDER_MEM_SIZE 65536
 #endif
 
-using android::hardware::gnss::V1_1::IGnss;
+using android::hardware::gnss::V2_1::IGnss;
 
 using android::hardware::configureRpcThreadpool;
 using android::hardware::registerPassthroughServiceImplementation;
@@ -60,25 +60,17 @@ int main() {
 
     status = registerPassthroughServiceImplementation<IGnss>();
     if (status == OK) {
-        if (vendorEnhanced) {
-    #ifdef LOC_HIDL_VERSION
-            #define VENDOR_ENHANCED_LIB "vendor.qti.gnss@" LOC_HIDL_VERSION "-service.so"
+        #define VENDOR_ENHANCED_LIB "vendor.qti.gnss@4.0-service.so"
 
-            void* libHandle = NULL;
-            vendorEnhancedServiceMain* vendorEnhancedMainMethod = (vendorEnhancedServiceMain*)
-                    dlGetSymFromLib(libHandle, VENDOR_ENHANCED_LIB, "main");
-            if (NULL != vendorEnhancedMainMethod) {
-                (*vendorEnhancedMainMethod)(0, NULL);
-            }
-    #else
-            ALOGE("LOC_HIDL_VERSION not defined.");
-    #endif
+        void* libHandle = NULL;
+        vendorEnhancedServiceMain* vendorEnhancedMainMethod = (vendorEnhancedServiceMain*)
+                dlGetSymFromLib(libHandle, VENDOR_ENHANCED_LIB, "main");
+        if (NULL != vendorEnhancedMainMethod) {
+            (*vendorEnhancedMainMethod)(0, NULL);
         }
-
         joinRpcThreadpool();
-
     } else {
-        ALOGE("Error while registering IGnss 1.1 service: %d", status);
+        ALOGE("Error while registering IGnss 2.1 service: %d", status);
     }
 
     return 0;

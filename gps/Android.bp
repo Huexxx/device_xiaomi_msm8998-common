@@ -27,6 +27,7 @@ GNSS_SANITIZE_DIAG = {
             "null",
             "unreachable",
             "integer",
+            "address",
         ],
     },
 */
